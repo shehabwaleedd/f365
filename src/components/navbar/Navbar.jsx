@@ -1,10 +1,18 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
+import { motion, useAnimation, AnimatePresence } from 'framer-motion';
+import Nav from './nav/index';
+import { FiMenu } from "react-icons/fi";
 import styles from './style.module.scss'
 import Link from 'next/link'
 
 const Navbar = () => {
+    const [navOpen, setNavOpen] = useState(false);
+    const toggleNavOpen = useCallback(() => {
+        setNavOpen(prevNavOpen => !prevNavOpen);
+    }, []);
+
     return (
         <header className={styles.header}>
             <nav className={styles.navbar}>
@@ -32,17 +40,23 @@ const Navbar = () => {
                     <div className={styles.navbar_container_right}>
                         <ul>
                             <li>
-                                <a href="/events">Events</a>
+                                <Link href="/events">Events</Link>
                             </li>
                             <li>
-                                <a href="/community">Community</a>
+                                <Link href="/community">Community</Link>
                             </li>
                             <li>
-                                <a href="/contact">Contact Us</a>
+                                <Link href="/contact">Contact Us</Link>
                             </li>
                         </ul>
                     </div>
+                <div className={styles.menu} onClick={toggleNavOpen}>
+                    <span><FiMenu style={{fontSize: "2rem", color: "var(--text-color)"}}/></span>
                 </div>
+                </div>
+                <AnimatePresence mode='wait'>
+                    {navOpen && <Nav setNavOpen={setNavOpen} />}
+                </AnimatePresence>
             </nav >
             <section className={styles.second_navbar}>
                 <div className={styles.second_navbar_container}>
@@ -65,6 +79,7 @@ const Navbar = () => {
                     </ul>
                 </div>
             </section>
+
         </header>
     )
 }

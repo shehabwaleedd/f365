@@ -1,4 +1,5 @@
-.navbar {
+.header {
+    .navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -7,6 +8,9 @@
     z-index: 100;
     border-bottom: 1px solid var(--border-color);
     background-color: var(--background-color);
+    @media (max-width: 1156px) {
+        border-top: 1px solid var(--border-color);
+    }
 
     &_container {
         display: flex;
@@ -69,6 +73,10 @@
 
         &_right {
 
+            @media (max-width: 1156px) {
+                display: none;
+            }
+
             ul {
                 li {
                     &:first-child {
@@ -83,6 +91,12 @@
             }
         }
 
+        &_left {
+            @media (max-width: 1156px) {
+                display: none;
+            }
+        }
+
 
 
         h2 {
@@ -90,7 +104,12 @@
             font-family: var(--title-font);
             color: var(--container-color);
             transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
-
+            @media (max-width: 1156px) {
+                font-size: 3rem;
+                border-right: 1px solid var(--border-color);
+                height: 6.5vh;
+                padding-right: 0.5rem;
+            }
             &:hover {
                 transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
                 color: var(--hover-color);
@@ -108,7 +127,9 @@
     z-index: 9;
     border-bottom: 1px solid var(--border-color);
     background-color: var(--background-color);
-
+    @media (max-width: 1156px) {
+        display: none;
+    }
 
     &_container {
         display: flex;
@@ -160,4 +181,35 @@
             }
         }
     }
+}
+
+.menu {
+    @media (min-width: 768px) {
+        display: none;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 6.5vh;
+    border-left: 1px solid var(--border-color);
+
+    span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 6.5vh;
+        width: 15vw;
+        transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        cursor: pointer;
+        font-display: swap;
+        user-select: none;
+        font-family: var(--body-font);
+        font-size: var(--big-font-size);
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        text-transform: capitalize;
+        color: var(--text-color);
+    }
+}
 }
