@@ -91,7 +91,7 @@
 }
 .style_story__right__46AMO span {
   font-family: var(--body-font);
-  font-size: var(--body-font-size);
+  font-size: var(--medium-font-size);
   font-weight: 300;
   width: 40%;
   white-space: wrap;
@@ -545,6 +545,12 @@
     }
 }
 
+@media (max-width: 1292px) {
+    .marquee {
+        transform: rotate(0deg);
+
+    }
+}
 @media (max-width: 992px) {
     .marquee h3 {
         font-size: 60px;
@@ -557,8 +563,4 @@
     }
 }
 
-@media (max-width: 1156px) {
-    .marquee {
-        display: none;
-    }
-}
+

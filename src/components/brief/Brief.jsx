@@ -65,7 +65,7 @@ const Brief = () => {
                     <p>F365, founded in 2023 by Asma Sami and Nihal Sami, is a pioneering wellness community dedicated to supporting women&apos;s health, personal development, and career progression. Incubated by in5 Dubai, an initiative of the Dubai Government, F365 empowers women through innovative programs and resources, fostering a vibrant environment for growth and success in all aspects of life.</p>
 
                 ) : (
-                    <span>Founded in 1995, Kronfol is a leading real estate agency in Beirut, Lebanon. Our team of experts are dedicated to finding the perfect property to suit your needs. Whether you are looking for a new home, an investment opportunity, or a short-term rental. Kronfol is here to help you find your dream property.</span>
+                    <span>F365, founded in 2023 by Asma Sami and Nihal Sami, is a pioneering wellness community dedicated to supporting women&apos;s health, personal development, and career progression. Incubated by in5 Dubai, an initiative of the Dubai Government, F365 empowers women through innovative programs and resources, fostering a vibrant environment for growth and success in all aspects of life.</span>
                 )}
                 <div className={styles.story__right_images}>
                     {isDesktop ? (
