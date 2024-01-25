@@ -3,6 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import styles from './style.module.scss'
 import { motion, useTransform, useScroll } from 'framer-motion';
+import Image from 'next/image';
 
 const Brief = () => {
     const [windowWidth, setWindowWidth] = useState(null);
@@ -89,13 +90,25 @@ const Brief = () => {
                     ) : (
                         <motion.div drag="x" dragConstraints={{ left: -500, right: 0 }} className={styles.story__right_images__drag}>
                             <div className={styles.story__right_images__drag_image}>
-                                <img src={url} />
+                                <Image src={url}
+                                    width={500}
+                                    height={500}
+                                    alt='img'
+                                />
                             </div>
                             <div className={styles.story__right_images__drag_image}>
-                                <img src={url2} />
+                                <Image src={url}
+                                    width={500}
+                                    height={500}
+                                    alt='img'
+                                />
                             </div>
                             <div className={styles.story__right_images__drag_image}>
-                                <img src={url3} />
+                                <Image src={url}
+                                    width={500}
+                                    height={500}
+                                    alt='img'
+                                />
                             </div>
                         </motion.div>
                     )}
