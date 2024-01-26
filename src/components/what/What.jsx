@@ -66,7 +66,7 @@ const What = () => {
                         return (
                             <motion.div key={index} className={styles.what_lower_card} ref={item.ref} style={{ translateY: item.translate }}>
                                 <h3>{item.title}</h3>
-                                <motion.img  src={item.image} alt={item.title} />
+                                <Image transition={{ staggerChildren: 3.5, duration: 0.7, ease: [0.42, 0, 0.58, 1] }} src={item.image} alt={item.title} width={500} height={500}/>
                             </motion.div>
                         )
                     })
