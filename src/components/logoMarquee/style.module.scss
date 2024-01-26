@@ -1,0 +1,10 @@
+.logo_marquee {
+    mix-blend-mode: multiply;
+    img {
+        width: 15vw;
+        height: 20vh;
+        object-fit: contain;
+        filter: contrast(1);
+
+    }
+}

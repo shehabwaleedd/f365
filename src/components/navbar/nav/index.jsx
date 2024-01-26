@@ -10,10 +10,6 @@ const links = [
     href: "/",
   },
   {
-    title: "About",
-    href: "/about",
-  },
-  {
     title: "Events",
     href: "/events",
   },
@@ -22,20 +18,8 @@ const links = [
     href: "/community",
   },
   {
-    title: "Contact",
-    href: "/contact",
-  },
-  {
     title: "About",
     href: "/about",
-  },
-  {
-    title: "Events",
-    href: "/events",
-  },
-  {
-    title: "Community",
-    href: "/community",
   },
   {
     title: "Contact",

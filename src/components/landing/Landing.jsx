@@ -12,7 +12,7 @@ const Landing = () => {
                     <h2>Empowering Women in Health, Growth, and Careers.</h2>
                     <button>
                         <Link href="/events">
-                            Join Our Community
+                            Become A Member
                         </Link>
                     </button>
                 </div>

@@ -11,24 +11,28 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic';
 import Calendly from './calendly/Calendly';
 
-const PopupButton = dynamic(
-    () => import('react-calendly').then((mod) => mod.PopupButton),
-    { ssr: false }
-);
-
 const Navbar = () => {
     const [navOpen, setNavOpen] = useState(false);
     const [showCalendlyModal, setShowCalendlyModal] = useState(false);
+    const [windowWidth, setWindowWidth] = useState(null);
+
+    useEffect(() => {
+        // Set the initial window width
+        setWindowWidth(window.innerWidth);
+
+        // Update the window width on resize
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
 
     const toggleNavOpen = useCallback(() => {
         setNavOpen(prevNavOpen => !prevNavOpen);
     }, []);
-    // const handleCalendlyClick = () => {
-    //     const calendlyUrl = "https://calendly.com/demoon0007";
-    //     window.open(calendlyUrl);
-    // };
-
     const toggleCalendlyModal = () => {
         setShowCalendlyModal(prevShow => !prevShow);
     };
@@ -45,11 +49,12 @@ const Navbar = () => {
                                     <Link href="/">Home</Link>
                                 </li>
                                 <li>
-                                    <Link href="/about">About Us</Link>
+                                    <Link href="/events">Events</Link>
                                 </li>
                                 <li>
-                                    <Link href="/services">Services</Link>
+                                    <Link href="/community">Community</Link>
                                 </li>
+
                             </ul>
                         </div>
                         <div className={styles.navbar_container_middle}>
@@ -62,10 +67,10 @@ const Navbar = () => {
                         <div className={styles.navbar_container_right}>
                             <ul>
                                 <li>
-                                    <Link href="/events">Events</Link>
+                                    <Link href="/about">About Us</Link>
                                 </li>
                                 <li>
-                                    <Link href="/community">Community</Link>
+                                    <Link href="/services">Services</Link>
                                 </li>
                                 <li>
                                     <Link href="/contact">Contact Us</Link>
@@ -87,27 +92,7 @@ const Navbar = () => {
                         {navOpen && <Nav setNavOpen={setNavOpen} />}
                     </AnimatePresence>
                 </nav >
-                <section className={styles.second_navbar}>
-                    <div className={styles.second_navbar_container}>
-                        <ul>
-                            <li>
-                                <Link href="/">Lifestyle</Link>
-                            </li>
-                            <li>
-                                <Link href="/about">Health</Link>
-                            </li>
-                            <li>
-                                <Link href="/services">Culture</Link>
-                            </li>
-                            <li>
-                                <Link href="/events">Careers</Link>
-                            </li>
-                            <li>
-                                <Link href="/events">Fashion</Link>
-                            </li>
-                        </ul>
-                    </div>
-                </section>
+
 
             </header>
         </>

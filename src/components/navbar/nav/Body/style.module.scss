@@ -1,11 +1,9 @@
 .body {
     display: grid;
-    grid-template-columns: 0.7fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 2rem;
     margin-top: 40px;
     padding: 2rem;
-
-
     a {
         color: var(--background-color);
         text-decoration: none;
