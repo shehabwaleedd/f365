@@ -544,11 +544,25 @@
   padding: 50px;
   transform-origin: top;
 }
+@media (max-width: 456px) {
+  .style_cardContainer__3DjhG .style_card__tvE5l {
+    width: 90%;
+    height: 70%;
+    padding: 1rem;
+  }
+}
 .style_cardContainer__3DjhG .style_card__tvE5l h2 {
   text-align: center;
   margin: 0px;
   font-size: 28px;
   font-family: var(--logo-font);
+}
+@media (max-width: 456px) {
+  .style_cardContainer__3DjhG .style_card__tvE5l h2 {
+    position: relative;
+    top: 2rem;
+    font-size: 22px;
+  }
 }
 .style_cardContainer__3DjhG .style_card__tvE5l .style_body__dZP0i {
   display: flex;
@@ -556,14 +570,30 @@
   margin-top: 50px;
   gap: 50px;
 }
+@media (max-width: 456px) {
+  .style_cardContainer__3DjhG .style_card__tvE5l .style_body__dZP0i {
+    flex-direction: column;
+  }
+}
 .style_cardContainer__3DjhG .style_card__tvE5l .style_body__dZP0i .style_description__kkZqc {
   width: 40%;
   position: relative;
   top: 10%;
 }
+@media (max-width: 456px) {
+  .style_cardContainer__3DjhG .style_card__tvE5l .style_body__dZP0i .style_description__kkZqc {
+    width: 100%;
+    top: 0;
+  }
+}
 .style_cardContainer__3DjhG .style_card__tvE5l .style_body__dZP0i .style_description_upper__IsLYS {
   display: grid;
   grid-template-columns: 0.4fr 2fr;
+}
+@media (max-width: 456px) {
+  .style_cardContainer__3DjhG .style_card__tvE5l .style_body__dZP0i .style_description_upper__IsLYS {
+    grid-template-columns: 0.5fr 2fr;
+  }
 }
 .style_cardContainer__3DjhG .style_card__tvE5l .style_body__dZP0i .style_description_upper__IsLYS img {
   border-radius: 50%;
@@ -612,6 +642,11 @@
   border-radius: 25px;
   overflow: hidden;
 }
+@media (max-width: 456px) {
+  .style_cardContainer__3DjhG .style_card__tvE5l .style_body__dZP0i .style_imageContainer__WeJvz {
+    width: 100%;
+  }
+}
 .style_cardContainer__3DjhG .style_card__tvE5l .style_body__dZP0i .style_imageContainer__WeJvz .style_inner__EtaDn {
   width: 100%;
   height: 100%;
@@ -632,6 +667,12 @@
   grid-gap: 1rem;
   gap: 1rem;
 }
+@media (max-width: 1277px) {
+  .page_events__gFDw7 {
+    grid-template-columns: 1fr;
+    margin-top: 5vh;
+  }
+}
 .page_events_left__t0jEX {
   display: flex;
   flex-direction: column;
@@ -647,8 +688,12 @@
   position: sticky;
   top: 10vh;
 }
-@media (max-width: 777px) {
+@media (max-width: 1277px) {
   .page_events_left__t0jEX {
+    position: relative;
+    height: -moz-fit-content;
+    height: fit-content;
+    top: 0;
     padding: 0.5rem;
   }
 }
@@ -678,4 +723,10 @@
   font-display: swap;
   width: 80%;
   text-align: justify;
+}
+@media (max-width: 456px) {
+  .page_events_left__t0jEX p {
+    width: 95%;
+    font-size: 1.2rem;
+  }
 }

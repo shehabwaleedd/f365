@@ -1,11 +1,12 @@
-.cardContainer{
+.cardContainer {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   position: sticky;
   top: 0px;
-  .card{
+
+  .card {
     display: flex;
     flex-direction: column;
     position: relative;
@@ -13,31 +14,61 @@
     height: 500px;
     width: 1000px;
     border-radius: 25px;
-    padding:50px;
+    padding: 50px;
     transform-origin: top;
-    h2{
+
+    @media (max-width: 456px) {
+      width: 90%;
+      height: 70%;
+      padding: 1rem;
+    }
+
+    h2 {
       text-align: center;
       margin: 0px;
       font-size: 28px;
       font-family: var(--logo-font);
+      @media (max-width: 456px) {
+        position: relative;
+        top: 2rem;
+        font-size: 22px;
+      }
 
     }
-    .body{
+
+    .body {
       display: flex;
       height: 100%;
       margin-top: 50px;
       gap: 50px;
 
-      .description{
+      @media (max-width: 456px) {
+        flex-direction: column;
+      }
+
+      .description {
         width: 40%;
         position: relative;
         top: 10%;
+
+        @media (max-width: 456px) {
+          width: 100%;
+          top: 0;
+        }
+
         &_upper {
           display: grid;
           grid-template-columns: 0.4fr 2fr;
+
+          @media (max-width: 456px) {
+            grid-template-columns: 0.5fr 2fr;
+
+          }
+
           img {
             border-radius: 50%;
           }
+
           h3 {
             font-family: var(--title-font);
             font-size: 24px;
@@ -47,6 +78,7 @@
             text-transform: capitalize;
             font-display: swap;
           }
+
           span {
             font-family: var(--body-font);
             font-size: 16px;
@@ -58,7 +90,8 @@
           }
 
         }
-        p{
+
+        p {
           font-size: 1.2rem;
           font-family: var(--body-font);
           color: var(--text-color);
@@ -67,11 +100,13 @@
           margin-top: 1rem;
 
         }
-        span{
+
+        span {
           display: flex;
           align-items: center;
           gap: 5px;
-          a{
+
+          a {
 
             font-size: var(--body-font-size);
             color: #000;
@@ -82,17 +117,24 @@
         }
       }
 
-      .imageContainer{
+      .imageContainer {
         position: relative;
         width: 60%;
         height: 100%;
         border-radius: 25px;
         overflow: hidden;
-        .inner{
+
+        @media (max-width: 456px) {
+          width: 100%;
+          
+        }
+
+        .inner {
           width: 100%;
           height: 100%;
         }
-        img{
+
+        img {
           object-fit: cover;
         }
       }

@@ -6,7 +6,7 @@ import { useRef } from 'react';
 import Link from 'next/link';
 import { FiArrowRight } from "react-icons/fi";
 
-const Card = ({ i, title, description, src, url, color, progress, range, targetScale }) => {
+const Card = ({ windowWidth, i, title, description, src, url, color, progress, range, targetScale }) => {
 
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -38,21 +38,28 @@ const Card = ({ i, title, description, src, url, color, progress, range, targetS
             <p>{description}</p>
             <span>
               <Link href={`${url}`} target="_blank">Join Now</Link>
-              <FiArrowRight style={{ fontSize: "1.6rem", marginTop: "0.4rem"}}/>
+              <FiArrowRight style={{ fontSize: "1.6rem", marginTop: "0.4rem" }} />
             </span>
           </div>
 
           <div className={styles.imageContainer}>
-            <motion.div
-              className={styles.inner}
-              style={{ scale: imageScale }}
-            >
-              <Image
-                fill
-                src={src}
-                alt="image"
-              />
-            </motion.div>
+            {windowWidth > 1268 ? (
+              <motion.div
+                className={styles.inner}
+                style={{ scale: imageScale }}
+              >
+                <Image
+                  fill
+                  src={src}
+                  alt="image"
+                />
+              </motion.div>
+
+            ) : (
+              <motion.div className={styles.inner}>
+                <Image fill src={src} alt="image" />
+              </motion.div>
+            )}
           </div>
 
         </div>

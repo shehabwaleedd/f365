@@ -6,6 +6,12 @@
     height: 100%;
     width: 100%;
     gap: 1rem;
+
+    @media (max-width: 1277px) {
+        grid-template-columns: 1fr;
+        margin-top: 5vh;
+    }
+
     &_left {
         display: flex;
         flex-direction: column;
@@ -20,9 +26,13 @@
         position: sticky;
         top: 10vh;
 
-        @media (max-width: 777px) {
+        @media (max-width: 1277px) {
+            position: relative;
+            height: fit-content;
+            top: 0;
             padding: 0.5rem;
         }
+
         h2 {
             font-family: var(--title-font);
             font-size: var(--biggest-font-size);
@@ -31,13 +41,16 @@
             letter-spacing: normal;
             text-transform: capitalize;
             font-display: swap;
+
             span {
                 color: var(--container-color);
             }
+
             @media (max-width: 777px) {
                 font-size: 4.3vh;
             }
         }
+
         p {
             font-family: var(--title-font);
             font-size: var(--big-font-size);
@@ -47,6 +60,11 @@
             font-display: swap;
             width: 80%;
             text-align: justify;
+
+            @media (max-width: 456px) {
+                width: 95%;
+                font-size: 1.2rem;
+            }
         }
     }
 }

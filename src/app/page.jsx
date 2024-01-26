@@ -51,7 +51,7 @@ export default function Home() {
       <What />
       <Statement />
       {/* <LogoMarquee /> */}
-      <Events />
+      <Events windowWidth={windowWidth}  />
     </main>
   );
 }

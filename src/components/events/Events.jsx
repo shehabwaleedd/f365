@@ -5,7 +5,7 @@ import Card from './Card';
 import { useScroll } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
-const Events = () => {
+const Events = ({ windowWidth }) => {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
         target: container,
@@ -22,7 +22,7 @@ const Events = () => {
                 {
                     projects.map((project, i) => {
                         const targetScale = 1 - ((projects.length - i) * 0.05);
-                        return <Card key={`p_${i}`} i={i} {...project} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale} />
+                        return <Card key={`p_${i}`} i={i} {...project} progress={scrollYProgress} range={[i * .25, 1]} targetScale={targetScale} windowWidth={windowWidth}/>
                     })
                 }
             </div>

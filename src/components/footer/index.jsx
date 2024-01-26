@@ -76,7 +76,7 @@ const index = () => {
             </div>
             <div className={styles.footer__footer}>
                 <div className={styles.footer__footer_logoz}>
-                    <h2>F356</h2>
+                    <h2>F365</h2>
 
                 </div>
                 <div className={styles.footer__footer_lower}>
@@ -93,7 +93,7 @@ const index = () => {
                         </li>
                     </ul>
                     <span>
-                        Copyright © Sheboo 2024
+                        Copyright © F365 2024
                     </span>
                 </div>
             </div>
