@@ -1,3 +1,5 @@
+'use client'
+
 import React, { useState, useRef, useEffect } from 'react'
 import { motion, useTransform, useScroll } from 'framer-motion';
 import styles from './style.module.scss'
@@ -44,7 +46,7 @@ const What = () => {
             translate: translateY2
         },
         {
-            title: "Community",
+            title: "Community & Networking",
             description: "We offer a range of community services to help you achieve your goals. Whether you are looking to change careers, get a promotion, or just want to improve your skills, we can help you find the right path.",
             image: "/assets/networking.jpg",
             ref: imgRef3,
@@ -66,7 +68,7 @@ const What = () => {
                         return (
                             <motion.div key={index} className={styles.what_lower_card} ref={item.ref} style={{ translateY: item.translate }}>
                                 <h3>{item.title}</h3>
-                                <Image transition={{ staggerChildren: 3.5, duration: 0.7, ease: [0.42, 0, 0.58, 1] }} src={item.image} alt={item.title} width={500} height={500}/>
+                                <Image transition={{ staggerChildren: 3.5, duration: 0.7, ease: [0.42, 0, 0.58, 1] }} src={item.image} alt={item.title} width={500} height={500} />
                             </motion.div>
                         )
                     })

@@ -2,7 +2,6 @@
 'use client';
 
 import { useEffect, useState } from 'react'
-import { AnimatePresence } from 'framer-motion';
 import Landing from "@/components/landing/Landing";
 import styles from "./page.module.scss";
 import Brief from "@/components/brief/Brief";
@@ -49,7 +48,8 @@ export default function Home() {
       <Brief windowWidth={windowWidth} />
       <What />
       <Statement />
-      <LogoMarquee />
+      {/* <LogoMarquee /> */}
+      
     </main>
   );
 }

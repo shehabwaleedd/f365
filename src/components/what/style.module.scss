@@ -12,14 +12,14 @@
     h2 {
         font-family: var(--body-font);
         font-size: var(--big-font-size);
-        color: var(--header-color);
+        color: var(--text-color);
         font-weight: 400;
         letter-spacing: normal;
         text-transform: lowercase;
         font-display: swap;
 
         span {
-            color: var(--container-color);
+            color: var(--text-color);
         }
 
         @media (max-width: 777px) {

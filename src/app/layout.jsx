@@ -2,6 +2,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
 import SmoothScrolling from "@/components/SmoothScrolling";
+import dynamic from "next/dynamic";
+
+const Footer = dynamic(() => import("@/components/footer"), { ssr: false });
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,6 +22,7 @@ export default function RootLayout({ children }) {
         <SmoothScrolling>
           {children}
         </SmoothScrolling>
+        <Footer />
       </body>
     </html>
   );

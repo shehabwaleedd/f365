@@ -101,6 +101,7 @@
   --title-font: 'CabinetGrotesk-Medium', sans-serif;
   --heading-font: 'CabinetGrotesk-Bold', sans-serif;
   --logo-font: 'CabinetGrotesk-ExtraBold', sans-serif;
+  --nav-font: 'CabinetGrotesk-Black', sans-serif;
 
   /* Font Sizes Based on Golden Ratio */
 
@@ -302,6 +303,196 @@ img {
   font-weight: 900;
   font-display: swap;
   font-style: normal;
+}
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/footer/style.module.scss ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.style_footer__4Fx8H {
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 9;
+  margin-top: 10vh;
+  border-top: 1px solid var(--border-color);
+}
+.style_footer__upper__UQTpX {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 100%;
+  grid-gap: 1rem;
+  gap: 1rem;
+  place-content: start;
+  place-items: start;
+}
+@media (max-width: 1265px) {
+  .style_footer__upper__UQTpX {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.style_footer__upper__UQTpX h2 {
+  font-family: var(--title-font);
+  font-size: var(--bigger-font-size);
+  color: var(--header-color);
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: capitalize;
+  font-display: swap;
+}
+@media (max-width: 777px) {
+  .style_footer__upper__UQTpX h2 {
+    font-size: 4.3vh;
+  }
+}
+.style_footer__upper__UQTpX ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 100%;
+}
+.style_footer__upper__UQTpX ul li a {
+  font-family: var(--body-font);
+  font-size: var(--big-font-size);
+  font-weight: 300;
+  width: 100%;
+  color: var(--subtitle-color);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1.5;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-display: swap;
+}
+.style_footer__upper__UQTpX ul li a:hover {
+  color: var(--header-color);
+}
+.style_footer__upper__right__7kZUt {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+}
+.style_footer__upper__right_container__w5CGd {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 50%;
+  height: 100%;
+  grid-gap: 1rem;
+  gap: 1rem;
+  place-content: start;
+  place-items: start;
+}
+@media (max-width: 1265px) {
+  .style_footer__upper__right_container__w5CGd {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.style_footer__footer__SPvDd {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: 100%;
+  grid-gap: 1rem;
+  gap: 1rem;
+}
+@media (max-width: 1265px) {
+  .style_footer__footer__SPvDd {
+    grid-template-columns: repeat(1, 1fr);
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+.style_footer__footer_logoz__E_S4D {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  width: 100%;
+  height: 100%;
+  gap: 1rem;
+}
+@media (max-width: 1265px) {
+  .style_footer__footer_logoz__E_S4D {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+.style_footer__footer_logoz__E_S4D h2 {
+  font-family: var(--logo-font);
+  font-size: 7vw;
+  color: var(--header-color);
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: capitalize;
+  font-display: swap;
+}
+@media (max-width: 1077px) {
+  .style_footer__footer_logoz__E_S4D h2 {
+    font-size: 7.3vh;
+    margin-top: 2rem;
+  }
+}
+.style_footer__footer_lower__0PQ_5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 100%;
+  width: 100%;
+}
+@media (max-width: 1265px) {
+  .style_footer__footer_lower__0PQ_5 {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+.style_footer__footer_lower__0PQ_5 ul {
+  gap: 1rem;
+  display: flex;
+}
+@media (max-width: 1265px) {
+  .style_footer__footer_lower__0PQ_5 ul {
+    display: none;
+  }
+}
+.style_footer__footer_lower__0PQ_5 ul li a {
+  font-family: var(--body-font);
+  font-size: var(--big-font-size);
+  font-weight: 400;
+  color: var(--subtitle-color);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1.5;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-display: swap;
+}
+.style_footer__footer_lower__0PQ_5 ul li a:hover {
+  color: var(--header-color);
+}
+.style_footer__footer_lower__0PQ_5 span {
+  font-family: var(--title-font);
+  font-size: var(--big-font-size);
+  font-weight: 400;
+  color: var(--header-color);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1.5;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-display: swap;
+}
+.style_footer__footer_lower__0PQ_5 span:hover {
+  color: var(--header-color);
 }
 /*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/navbar/nav/Body/style.module.scss ***!
@@ -567,7 +758,7 @@ img {
 }
 .style_header__JoUo8 .style_navbar_container__1Ulxq h2 {
   font-size: 3.7rem;
-  font-family: var(--title-font);
+  font-family: var(--logo-font);
   color: var(--container-color);
   transition: all 0.3s cubic-bezier(0.19, 1, 0.22, 1);
 }
