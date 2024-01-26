@@ -97,6 +97,17 @@
             }
         }
 
+        button {
+            background-color: transparent;
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            color: var(--container-color);
+            text-transform: uppercase;
+            @media (min-width: 1156px) {
+                display: none;
+            }
+        }
+
 
 
         h2 {

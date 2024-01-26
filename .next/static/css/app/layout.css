@@ -418,6 +418,52 @@ img {
   flex-direction: column;
   justify-content: space-between;
 }
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/navbar/calendly/style.module.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.style_modalBackground__JiUJc {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 110vh;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.style_modalBackground__JiUJc .style_modalConatiner__zQARB {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+.style_modalBackground__JiUJc button {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  background-color: var(--background-color);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.style_modalBackground__JiUJc button span {
+  font-family: var(--body-font);
+  color: var(--background-color);
+  font-size: 5rem;
+}
+.style_modalBackground__JiUJc button:hover {
+  color: var(--container-color);
+}
+.style_modalBackground__JiUJc iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  width: 85%;
+  height: 70%;
+}
 /*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/navbar/style.module.scss ***!
   \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -501,6 +547,18 @@ img {
 }
 @media (max-width: 1156px) {
   .style_header__JoUo8 .style_navbar_container_left__qsmEJ {
+    display: none;
+  }
+}
+.style_header__JoUo8 .style_navbar_container__1Ulxq button {
+  background-color: transparent;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: var(--container-color);
+  text-transform: uppercase;
+}
+@media (min-width: 1156px) {
+  .style_header__JoUo8 .style_navbar_container__1Ulxq button {
     display: none;
   }
 }

@@ -28,9 +28,9 @@ const Brief = () => {
     const isDesktop = windowWidth > 1268;
 
 
-    const url = "https://images.pexels.com/photos/1732414/pexels-photo-1732414.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    const url2 = "https://images.pexels.com/photos/36362/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-    const url3 = "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+    const url = "https://images.pexels.com/photos/4324101/pexels-photo-4324101.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    const url2 = "https://images.pexels.com/photos/18762797/pexels-photo-18762797/free-photo-of-runner-training-for-a-marathon.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    const url3 = "https://images.pexels.com/photos/1267697/pexels-photo-1267697.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
 
     const { scrollYProgress: scrollYProgress1 } = useScroll({
         target: imgRef,
@@ -97,14 +97,14 @@ const Brief = () => {
                                 />
                             </div>
                             <div className={styles.story__right_images__drag_image}>
-                                <Image src={url}
+                                <Image src={url2}
                                     width={500}
                                     height={500}
                                     alt='img'
                                 />
                             </div>
                             <div className={styles.story__right_images__drag_image}>
-                                <Image src={url}
+                                <Image src={url3}
                                     width={500}
                                     height={500}
                                     alt='img'
