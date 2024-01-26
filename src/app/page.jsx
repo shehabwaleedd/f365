@@ -15,7 +15,10 @@ import Events from '@/components/events/Events';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const [hasAnimationShown, setHasAnimationShown] = useState(false);
+  const [hasAnimationShown, setHasAnimationShown] = useState(sessionStorage.getItem('hasAnimationShown'));
+
+
+
   const [windowWidth, setWindowWidth] = useState(null);
 
   useEffect(() => {
@@ -31,19 +34,13 @@ export default function Home() {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  useEffect(() => {
-    const hasAnimationShown = sessionStorage.getItem('hasAnimationShown');
-    if (hasAnimationShown) {
-      setHasAnimationShown(true);
-      setIsLoading(false);
-    }
-  }, []);
+
 
 
   return (
     <main>
       <AnimatePresence mode='wait'>
-        <Opening isLoading={isLoading} />
+        {!hasAnimationShown && <Opening isLoading={isLoading} setIsLoading={setIsLoading}/>}
       </AnimatePresence>
       <Landing />
       <Marquee />

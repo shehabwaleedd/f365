@@ -53,6 +53,7 @@ const Opening = ({ isLoading }) => {
                     complete: () => {
                         // Animate up the pre-loader after text and counter animation
                         gsap.to(preLoaderRef.current, { y: -window.innerHeight, ease: "power2.inOut", duration: 1 });
+                        sessionStorage.setItem('hasAnimationShown', true);
                     }
                 }, '-=800');
         }
