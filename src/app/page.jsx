@@ -2,6 +2,7 @@
 'use client';
 
 import { useEffect, useState } from 'react'
+import { AnimatePresence } from 'framer-motion';
 import Landing from "@/components/landing/Landing";
 import styles from "./page.module.scss";
 import Brief from "@/components/brief/Brief";
@@ -10,6 +11,7 @@ import Opening from '@/animation/opening/Opening';
 import What from '@/components/what/What';
 import LogoMarquee from '@/components/logoMarquee/LogoMarquee';
 import Statement from '@/components/statement/Statement';
+import Events from '@/components/events/Events';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -49,7 +51,7 @@ export default function Home() {
       <What />
       <Statement />
       {/* <LogoMarquee /> */}
-      
+      <Events />
     </main>
   );
 }
