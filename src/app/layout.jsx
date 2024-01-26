@@ -10,7 +10,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "F365 | Wellness Female Community In Dubai",
-  descripiton: "F365",
+  descripiton: "F365 – Empowering women through health, personal development, and career growth. Join our thriving community for transformative workshops, networking events, and mentorship programs. Elevate your well-being and career with F365",
+  
+
 
 };
 

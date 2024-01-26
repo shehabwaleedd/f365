@@ -42,16 +42,16 @@ export default function Home() {
 
   return (
     <main>
-      {/* <AnimatePresence mode='wait'>
+      <AnimatePresence mode='wait'>
         <Opening isLoading={isLoading} />
-      </AnimatePresence> */}
+      </AnimatePresence>
       <Landing />
       <Marquee />
       <Brief windowWidth={windowWidth} />
       <What />
       <Statement />
-      {/* <LogoMarquee /> */}
       <Events windowWidth={windowWidth}  />
+      <LogoMarquee />
     </main>
   );
 }

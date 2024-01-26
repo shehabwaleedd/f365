@@ -277,89 +277,91 @@
 /*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/animation/opening/Opening.css ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************/
-.opening {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    background-color: var(--container-color);
-}
-
-.overlay {
+.pre-loader {
     position: fixed;
-    width: 100vw;
-    height: 100vh;
-    z-index: 999999;
-    display: flex;
     top: 0;
-
-}
-
-.bar {
-    width: 20vw;
-    height: 115vh;
-    background-color: var(--container-color);
-}
-
-.counter {
-    position: fixed;
-    bottom: 0;
     width: 100%;
     height: 100%;
-    z-index: 9999999999;
-    display: flex;
-    right: 0;
-    justify-content: center;
-    align-items: center;
-    color: var(--background-color);
-    padding: 0.2em 0.4em;
-    font-size: 20vw;
-    font-family: var(--logo-font);
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    z-index: 99999;
 }
 
-.opening h2 {
-    position: fixed;
-    z-index: 9999999999;
-    top: 50%;
-    left: 0;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--background-color);
-    font-size: 24vw;
-    text-transform: uppercase;
-    opacity: 0;
-    letter-spacing: 0.2rem;
-    line-height: 0;
+.loader {
+    position: absolute;
+    top: 0;
     width: 100%;
-    font-family: var(--logo-font);
-}
-
-.opening h1 {
+    height: 100%;
+    background-color: var(--container-color);
     color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
 }
 
-.counter span {
-    padding-right: 1rem;
+.loader-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    z-index: 99999;
+    color: var(--background-color);
+    overflow: hidden;
+
+
 }
 
-@media (max-width: 476px) {
-    .counter {
-        font-size: 15vw;
-    }
+.count {
+    flex: 2 1;
+    text-align: right;
+    line-height: 1;
+    padding: 0 0.5rem;
 
-    .logoname {
-        font-size: 6vw;
-        top: 40%;
-        left: 0%;
-        letter-spacing: 0.1rem;
-    }
+}
 
-    .cairostudio {
-        letter-spacing: 0.2rem;
-    }
+.copy {
+    flex: 6 1;
+    font-family: var(--logo-font);
+    font-size: 30px;
+    text-transform: uppercase;
+    line-height: 1;
+
+
+
+}
+
+.ml16 {
+    overflow: hidden;
+}
+
+.ml16 .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+.loader-bg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    display: block;
+    z-index: -1;
+}
+
+.loader-2 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-color);
+    display: block;
+    z-index: -1;
+    -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+
 }
 /*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/what/style.module.scss ***!
