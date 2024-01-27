@@ -12,6 +12,7 @@ import What from '@/components/what/What';
 import LogoMarquee from '@/components/logoMarquee/LogoMarquee';
 import Statement from '@/components/statement/Statement';
 import Events from '@/components/events/Events';
+import WorkWithUs from '@/components/workWithUs/WorkWithUs';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -49,6 +50,7 @@ export default function Home() {
       <Statement />
       <Events windowWidth={windowWidth}  />
       <LogoMarquee />
+      <WorkWithUs />
     </main>
   );
 }

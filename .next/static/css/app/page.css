@@ -732,3 +732,48 @@
     font-size: 1.2rem;
   }
 }
+/*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/workWithUs/page.module.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.page_work__xTkU3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  grid-gap: 2rem;
+  gap: 2rem;
+  padding: 1rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 20vh;
+}
+@media (max-width: 1234px) {
+  .page_work__xTkU3 {
+    margin-top: 10vh;
+    grid-template-columns: 1fr;
+  }
+}
+.page_work__xTkU3 h2 {
+  font-size: 4vw;
+  font-family: "CabinetGrotesk-Medium";
+  color: var(--container-color);
+}
+@media (max-width: 1234px) {
+  .page_work__xTkU3 h2 {
+    font-size: var(--bigger-font-size);
+  }
+}
+.page_work__xTkU3 a {
+  font-size: 3vw;
+  font-family: "CabinetGrotesk-Regular";
+  margin-bottom: 1rem;
+  position: relative;
+  right: 0rem;
+  color: var(--text-color);
+}
+@media (max-width: 1234px) {
+  .page_work__xTkU3 a {
+    font-size: var(--big-font-size);
+  }
+}
