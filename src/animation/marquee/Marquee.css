@@ -31,7 +31,7 @@
 .text-stroke-black {
     color: transparent;
     -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: var(--background-color);
+    -webkit-text-stroke-color: var(--subtitle-color);
 }
 
 @keyframes marqueeAnimation {

@@ -506,7 +506,7 @@
 .text-stroke-black {
     color: transparent;
     -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: var(--background-color);
+    -webkit-text-stroke-color: var(--subtitle-color);
 }
 
 @keyframes marqueeAnimation {
@@ -624,8 +624,7 @@
 .style_what__sRA_s {
   display: grid;
   grid-template-columns: 1fr;
-  width: 100%;
-  max-width: 99%;
+  width: 99%;
   margin: auto;
   height: 100%;
   overflow: hidden;
