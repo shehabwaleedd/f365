@@ -2,40 +2,49 @@
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
-    max-width: 95%;
+    max-width: 99%;
     margin: auto;
     height: 100%;
-    margin-top: 10rem;
-    margin-bottom: 5rem;
     overflow: hidden;
+    position: relative;
+    right: -0.2rem;
+    border-radius: 2rem;
     gap: 3vh;
+
     h2 {
         font-family: var(--body-font);
         font-size: var(--big-font-size);
-        color: var(--text-color);
+        color: var(--container-color);
         font-weight: 400;
         letter-spacing: normal;
         text-transform: lowercase;
         font-display: swap;
 
         span {
-            color: var(--text-color);
+            color: var(--accent-color);
         }
 
         @media (max-width: 777px) {
             font-size: 4.3vh;
         }
     }
+
+    &_upper {
+        background-color: var(--title-color);
+        border-radius: 2rem;
+        padding: 1rem;
+    }
+
     &_lower {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 1vw;
         width: 100%;
         height: 100%;
-        margin-top: 20vh;
+
         @media (max-width: 1177px) {
             grid-template-columns: 1fr;
-            margin-top: 10vh;
+            gap: 2vh;
         }
 
         &_card {
@@ -46,10 +55,13 @@
             gap: 1rem;
             width: 100%;
             height: 100%;
+            padding: 1rem;
+            background-color: var(--container-color);
+            border-radius: 2rem;
             h3 {
                 font-family: var(--title-font);
-                font-size: var(--bigger-font-size);
-                color: var(--container-color);
+                font-size: var(--big-font-size);
+                color: var(--title-color);
                 font-weight: 400;
                 letter-spacing: normal;
                 text-transform: capitalize;
@@ -62,6 +74,12 @@
                 letter-spacing: normal;
                 text-transform: lowercase;
                 font-display: swap;
+            }
+            img {
+                width: 100%;
+                height: 20vh;
+                border-radius: 1.5rem;
+                object-fit: cover;
             }
         }
     }   

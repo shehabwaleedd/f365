@@ -1,5 +1,5 @@
 .marquee {
-    width: 100%;
+    width: 99%;
     padding: 0rem 1.25rem;
     border-top: 1px solid var(--text-color);
     border-bottom: 1px solid var(--text-color);
@@ -7,9 +7,9 @@
     overflow: hidden;
     height: 100%;
     background-color: var(--container-color);
+    border-radius: 2rem;
     position: relative;
-    transform: rotate(-0.5deg);
-    top: -3vh;
+    margin: 0 auto;
 }
 
 .marquee h3 {
@@ -40,12 +40,7 @@
     }
 }
 
-@media (max-width: 1292px) {
-    .marquee {
-        transform: rotate(0deg);
 
-    }
-}
 @media (max-width: 992px) {
     .marquee h3 {
         font-size: 60px;

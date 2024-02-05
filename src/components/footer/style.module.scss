@@ -7,12 +7,14 @@
     padding: 1rem;
     position: relative;
     height: 100%;
-    width: 100%;
+    width: 99%;
     position: relative;
+    right: -0.3rem;
+    top: -1rem;
     z-index: 9;
-    margin-top: 10vh;
-    border-top: 1px solid var(--border-color);
-
+    margin-top: 4vh;
+    background-color: var(--container-color);
+    border-radius: 2rem;
 
     &__upper {
         display: grid;
@@ -30,7 +32,7 @@
         h2 {
             font-family: var(--title-font);
             font-size: var(--bigger-font-size);
-            color: var(--header-color);
+            color: var(--title-color);
             font-weight: 400;
             letter-spacing: normal;
             text-transform: capitalize;
@@ -119,7 +121,7 @@
             h2 {
                 font-family: var(--logo-font);
                 font-size: 7vw;
-                color: var(--header-color);
+                color: var(--title-color);
                 font-weight: 400;
                 letter-spacing: normal;
                 text-transform: capitalize;
@@ -161,7 +163,6 @@
                         color: var(--subtitle-color);
                         transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
                         line-height: 1.5;
-                        user-select: none;
                         font-display: swap;
 
                         &:hover {
@@ -175,7 +176,7 @@
                 font-family: var(--title-font);
                 font-size: var(--big-font-size);
                 font-weight: 400;
-                color: var(--header-color);
+                color: var(--title-color);
                 transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
                 line-height: 1.5;
                 user-select: none;

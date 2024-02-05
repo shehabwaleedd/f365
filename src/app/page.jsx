@@ -12,7 +12,6 @@ import What from '@/components/what/What';
 import LogoMarquee from '@/components/logoMarquee/LogoMarquee';
 import Statement from '@/components/statement/Statement';
 import Events from '@/components/events/Events';
-import WorkWithUs from '@/components/workWithUs/WorkWithUs';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -39,18 +38,17 @@ export default function Home() {
 
 
   return (
-    <main>
+    <main className={styles.main}>
       <AnimatePresence mode='wait'>
-        {!hasAnimationShown && <Opening isLoading={isLoading} setIsLoading={setIsLoading}/>}
+        {!hasAnimationShown && <Opening isLoading={isLoading} setIsLoading={setIsLoading} />}
       </AnimatePresence>
-      <Landing />
+      <Landing windowWidth={windowWidth} />
+      <What />
       <Marquee />
       <Brief windowWidth={windowWidth} />
-      <What />
       <Statement />
-      <Events windowWidth={windowWidth}  />
+      <Events windowWidth={windowWidth} />
       <LogoMarquee />
-      <WorkWithUs />
     </main>
   );
 }

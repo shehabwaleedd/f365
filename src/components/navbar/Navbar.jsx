@@ -39,64 +39,89 @@ const Navbar = () => {
 
 
     return (
-        <>
-            <header className={styles.header}>
-                <nav className={styles.navbar}>
-                    <div className={styles.navbar_container}>
-                        <div className={styles.navbar_container_left}>
-                            <ul>
-                                <li>
-                                    <Link href="/">Home</Link>
-                                </li>
-                                <li>
-                                    <Link href="/events">Events</Link>
-                                </li>
-                                <li>
-                                    <Link href="/community">Community</Link>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <div className={styles.navbar_container_middle}>
-                            <Link href="/">
-                                <h2>
-                                    F365
-                                </h2>
+        <motion.nav className={styles.nav} >
+            <div className={styles.nav__container}>
+                <div className={styles.nav__left}>
+                    <Link className={styles.nav__logo} href="/">
+                        <h1 className={styles.logo__name}>F365</h1>
+                    </Link>
+                    <div className={styles.nav__middle}>
+                        <ul className={styles.nav__list}>
+                            <Link className={styles.nav__link} href="/portraits">
+                                <motion.li className={styles.nav__item}>
+                                    Events
+                                </motion.li>
                             </Link>
-                        </div>
-                        <div className={styles.navbar_container_right}>
-                            <ul>
-                                <li>
-                                    <Link href="/about">About Us</Link>
-                                </li>
-                                <li>
-                                    <Link href="/services">Services</Link>
-                                </li>
-                                <li>
-                                    <Link href="/contact">Contact Us</Link>
-                                </li>
-                            </ul>
-                        </div>
-                        <button onClick={toggleCalendlyModal} className={styles.calendlyButton}>
-                            Schedule a meeting
-                        </button>
-                        <AnimatePresence mode='wait'>
-                            {showCalendlyModal && <Calendly onClose={toggleCalendlyModal} />}
-                        </AnimatePresence>
+                            <Link className={styles.nav__link} href="/history">
+                                <motion.li className={styles.nav__item}>
+                                    About
+                                </motion.li>
+                            </Link>
+                            <Link className={styles.nav__link} href="/politics">
+                                <motion.li className={styles.nav__item}>
+                                    Contact
+                                </motion.li>
+                            </Link>
 
-                        <div className={styles.menu} onClick={toggleNavOpen}>
-                            <span><FiMenu style={{ fontSize: "2rem", color: "var(--container-color)" }} /></span>
-                        </div>
+                        </ul>
                     </div>
-                    <AnimatePresence mode='wait'>
-                        {navOpen && <Nav setNavOpen={setNavOpen} />}
+                </div>
+                <div className={styles.nav__right}>
+                    <AnimatePresence>
+                        {navOpen && (
+                            <motion.div
+                                className={styles.extendedMenu}
+                                initial={{ opacity: 0, x: 100 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                exit={{ opacity: 0, x: 100 }}
+                            >
+                                <Link className={styles.nav__link} href="/mission">
+                                    <motion.li
+                                        className={styles.nav__item}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                    >
+                                        Our Mission
+                                    </motion.li>
+                                </Link>
+                                <Link className={styles.nav__link} href="/about">
+                                    <motion.li
+                                        className={styles.nav__item}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                    >
+                                        About Us
+                                    </motion.li>
+                                </Link>
+                                <Link className={styles.nav__link} href="/careers">
+                                    <motion.li
+                                        className={styles.nav__item}
+                                        initial={{ opacity: 0 }}
+                                        animate={{ opacity: 1 }}
+                                        exit={{ opacity: 0 }}
+                                    >
+                                        Careers
+                                    </motion.li>
+                                </Link>
+                            </motion.div>
+                        )}
                     </AnimatePresence>
-                </nav >
-
-
-            </header>
-        </>
+                    <h2 className={styles.nav__item} onClick={toggleNavOpen}>
+                        Menu
+                    </h2>
+                </div>
+            </div>
+        </motion.nav >
     )
 }
 
 export default Navbar
+
+// <button onClick={toggleCalendlyModal} className={styles.calendlyButton}>
+//     Schedule a meeting
+// </button>
+// <AnimatePresence mode='wait'>
+//     {showCalendlyModal && <Calendly onClose={toggleCalendlyModal} />}
+// </AnimatePresence>

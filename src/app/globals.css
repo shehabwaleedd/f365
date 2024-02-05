@@ -1,19 +1,19 @@
 :root {
   /* Dark Batik Pink */
-  --container-color: #D66A8A;
+  --container-color: #ffffff;
   /* Batik Pink */
-  --subtitle-color: #9c657e;
-;
+  --subtitle-color: #404040;
+  --title-color: #1b1b1b;
 	--text-color: #47393f;
   --hue: 0;
 	--sat: 0%;
   /* Light Batik Pink */
   --hover-color: #aa5380;
-  --accent-color: #ff4b26;
+  --accent-color: #ff7da6;
   /* light baby pink */
-  --background-color: #efe2e4; 
+  --background-color: #0c0c0c; 
   --color-number: #999;
-  --border-color: #df9abd;
+  --border-color: #ff7da6;
 
   /* Responsive Sizes  */
 
@@ -22,15 +22,14 @@
   --desktop: 1424px;
   --big-desktop: 1940px;
 
-
   /* Fonts */
 
-  --body-font: 'CabinetGrotesk-Regular', sans-serif;
-  --subtitle-font: 'CabinetGrotesk-Light', sans-serif;
-  --title-font: 'CabinetGrotesk-Medium', sans-serif;
-  --heading-font: 'CabinetGrotesk-Bold', sans-serif;
-  --logo-font: 'CabinetGrotesk-ExtraBold', sans-serif;
-  --nav-font: 'CabinetGrotesk-Black', sans-serif;
+  --body-font: 'Asap-Regular', sans-serif;
+  --subtitle-font: 'Asa[-Light', sans-serif;
+  --title-font: 'Asap-Medium', sans-serif;
+  --heading-font: 'Asap-Bold', sans-serif;
+  --logo-font: 'Asap-ExtraBold', sans-serif;
+  --nav-font: 'Asap-Black', sans-serif;
 
   /* Font Sizes Based on Golden Ratio */
 
@@ -39,8 +38,7 @@
   --big-font-size: 1.618rem;
   --bigger-font-size: 2.618rem;
   --biggest-font-size: 4.236rem;
-
-
+  --h1-font-size: 6.854rem;
 }
 
 * {
@@ -76,10 +74,6 @@ textarea {
   font-size: var(--normal-font-size);
 }
 
-img {
-  pointer-events: none;
-}
-
 ul {
   list-style: none;
 }
@@ -97,6 +91,7 @@ button {
 
 img {
   max-width: 100%;
+  pointer-events: none;
   height: auto;
 }
 
@@ -128,63 +123,17 @@ img {
   display: none;
 }
 
-
-
-
 .hiddenn {
   display: none;
 }
 
 
-@font-face {
-  font-family: 'CabinetGrotesk-Variable';
-  src: url('../../public/fonts/CabinetGrotesk-Variable.woff2') format('woff2'),
-    url('../../public/fonts/CabinetGrotesk-Variable.woff') format('woff'),
-    url('../../public/fonts/CabinetGrotesk-Variable.ttf') format('truetype');
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-}
-
 
 @font-face {
-  font-family: 'CabinetGrotesk-Thin';
-  src: url('../../public/fonts/CabinetGrotesk-Thin.woff2') format('woff2'),
-    url('../../public/fonts/CabinetGrotesk-Thin.woff') format('woff'),
-    url('../../public/fonts/CabinetGrotesk-Thin.ttf') format('truetype');
-  font-weight: 100;
-  font-display: swap;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'CabinetGrotesk-Extralight';
-  src: url('../../public/fonts/CabinetGrotesk-Extralight.woff2') format('woff2'),
-    url('../../public/fonts/CabinetGrotesk-Extralight.woff') format('woff'),
-    url('../../public/fonts/CabinetGrotesk-Extralight.ttf') format('truetype');
-  font-weight: 200;
-  font-display: swap;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'CabinetGrotesk-Light';
-  src: url('../../public/fonts/CabinetGrotesk-Light.woff2') format('woff2'),
-    url('../../public/fonts/CabinetGrotesk-Light.woff') format('woff'),
-    url('../../public/fonts/CabinetGrotesk-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-display: swap;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'CabinetGrotesk-Regular';
-  src: url('../../public/fonts/CabinetGrotesk-Regular.woff2') format('woff2'),
-    url('../../public/fonts/CabinetGrotesk-Regular.woff') format('woff'),
-    url('../../public/fonts/CabinetGrotesk-Regular.ttf') format('truetype');
+  font-family: 'Asap-Regular';
+  src: url('../../public/fonts/Asap-Regular.woff2') format('woff2'),
+    url('../../public/fonts/Asap-Regular.woff') format('woff'),
+    url('../../public/fonts/Asap-Regular.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -192,10 +141,10 @@ img {
 
 
 @font-face {
-  font-family: 'CabinetGrotesk-Medium';
-  src: url('../../public/fonts/CabinetGrotesk-Medium.woff2') format('woff2'),
-    url('../../public/fonts/CabinetGrotesk-Medium.woff') format('woff'),
-    url('../../public/fonts/CabinetGrotesk-Medium.ttf') format('truetype');
+  font-family: 'Asap-Medium';
+  src: url('../../public/fonts/Asap-Medium.woff2') format('woff2'),
+    url('../../public/fonts/Asap-Medium.woff') format('woff'),
+    url('../../public/fonts/Asap-Medium.ttf') format('truetype');
   font-weight: 500;
   font-display: swap;
   font-style: normal;
@@ -203,33 +152,11 @@ img {
 
 
 @font-face {
-  font-family: 'CabinetGrotesk-Bold';
-  src: url('../../public/fonts/CabinetGrotesk-Bold.woff2') format('woff2'),
-    url('../../public/fonts/CabinetGrotesk-Bold.woff') format('woff'),
-    url('../../public/fonts/CabinetGrotesk-Bold.ttf') format('truetype');
+  font-family: 'Asap-Bold';
+  src: url('../../public/fonts/Asap-Bold.woff2') format('woff2'),
+    url('../../public/fonts/Asap-Bold.woff') format('woff'),
+    url('../../public/fonts/Asap-Bold.ttf') format('truetype');
   font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'CabinetGrotesk-Extrabold';
-  src: url('../../public/fonts/CabinetGrotesk-Extrabold.woff2') format('woff2'),
-    url('../../public/fonts/CabinetGrotesk-Extrabold.woff') format('woff'),
-    url('../../public/fonts/CabinetGrotesk-Extrabold.ttf') format('truetype');
-  font-weight: 800;
-  font-display: swap;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'CabinetGrotesk-Black';
-  src: url('../../public/fonts/CabinetGrotesk-Black.woff2') format('woff2'),
-    url('../../public/fonts/CabinetGrotesk-Black.woff') format('woff'),
-    url('../../public/fonts/CabinetGrotesk-Black.ttf') format('truetype');
-  font-weight: 900;
   font-display: swap;
   font-style: normal;
 }

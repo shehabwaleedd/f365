@@ -1,5 +1,5 @@
 import React from 'react';
-import { translate } from "../../navbar/anim";
+import { translate } from "@/components/navbar/anim";
 import { motion } from "framer-motion"
 import styles from "./style.module.scss"
 

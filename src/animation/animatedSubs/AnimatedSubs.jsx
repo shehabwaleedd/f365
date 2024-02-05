@@ -5,7 +5,8 @@ import { slideUp } from './animation';
 
 const AnimatedSubs = ({ phrase }) => {
     const description = useRef(null);
-    const isInView = useInView(description)
+    const isInView = useInView(description, { triggerOnce: true }
+    )
 
     return (
         <div ref={description} className={styles.description}>

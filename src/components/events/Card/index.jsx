@@ -19,11 +19,7 @@ const Card = ({ windowWidth, i, title, description, src, url, color, progress, r
 
   return (
     <div ref={container} className={styles.cardContainer}>
-      <motion.div
-        style={{ backgroundColor: color, scale, top: `calc(-5vh + ${i * 25}px)` }}
-        className={styles.card}
-      >
-        <h2>{title}</h2>
+      <motion.div style={{ backgroundColor: color, scale, top: `calc(0vh + ${i * 25}px)` }} className={styles.card}>
         <div className={styles.body}>
           <div className={styles.description}>
             <div className={styles.description_upper}>
@@ -35,13 +31,14 @@ const Card = ({ windowWidth, i, title, description, src, url, color, progress, r
                 <span>Founder</span>
               </div>
             </div>
+            <h2>{title}</h2>
             <p>{description}</p>
-            <span>
+          </div>
+          {/* 
+          <span>
               <Link href={`${url}`} target="_blank">Join Now</Link>
               <FiArrowRight style={{ fontSize: "1.6rem", marginTop: "0.4rem" }} />
-            </span>
-          </div>
-
+            </span> */}
           <div className={styles.imageContainer}>
             {windowWidth > 1268 ? (
               <motion.div
@@ -61,7 +58,6 @@ const Card = ({ windowWidth, i, title, description, src, url, color, progress, r
               </motion.div>
             )}
           </div>
-
         </div>
       </motion.div>
     </div>
