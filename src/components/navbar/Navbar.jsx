@@ -90,8 +90,7 @@ const Navbar = () => {
                                         className={styles.nav__item}
                                         initial={{ opacity: 0 }}
                                         animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                    >
+                                        exit={{ opacity: 0 }}>
                                         About Us
                                     </motion.li>
                                 </Link>

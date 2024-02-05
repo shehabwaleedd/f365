@@ -1,1 +1,0 @@
-"use strict";exports.id=170,exports.ids=[170],exports.modules={8170:(e,s,t)=>{t.r(s),t.d(s,{$$typeof:()=>d,__esModule:()=>r,default:()=>l});let o=(0,t(6843).createProxy)(String.raw`/Users/shehabwaleed/Development/work/f356/src/components/footer/index.jsx`),{__esModule:r,$$typeof:d}=o,l=o.default}};
