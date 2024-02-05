@@ -16,6 +16,7 @@
     border-radius: 2rem;
     padding: 1.25rem;
     transform-origin: top;
+    border: 1px solid var(--title-color);
 
     @media (max-width: 456px) {
       width: 100%;

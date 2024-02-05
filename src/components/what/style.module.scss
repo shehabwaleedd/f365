@@ -33,6 +33,7 @@
         background-color: var(--title-color);
         border-radius: 2rem;
         padding: 1rem;
+        
     }
 
     &_lower {
@@ -58,6 +59,8 @@
             padding: 1rem;
             background-color: var(--container-color);
             border-radius: 2rem;
+            border: 1px solid var(--title-color);
+
             h3 {
                 font-family: var(--title-font);
                 font-size: var(--big-font-size);

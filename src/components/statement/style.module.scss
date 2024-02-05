@@ -12,6 +12,7 @@
     margin-inline: auto;
     position: relative;
     right: -0.2rem;
+    border: 1px solid var(--title-color);
 
     @media (max-width: 456px) {
         padding: 2rem 1rem;

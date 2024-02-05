@@ -11,6 +11,7 @@
     top: 8.5vh;
     right: -0.5rem;
 
+
     @media (max-width: 1143px) {
         grid-template-columns: 1fr;
         right: 0;
@@ -130,6 +131,7 @@
             padding: 1rem;
             background-color: var(--container-color);
             border-radius: 2rem;
+            border: 1px solid var(--title-color);
             h2 {
                 font-family: var(--body-font);
                 font-size: var(--biggest-font-size);
@@ -162,7 +164,6 @@
             &_bottom {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;
                 gap: 1rem;
                 width: 100%;
                 height: fit-content;

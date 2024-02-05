@@ -12,7 +12,9 @@
     user-select: none;
 
     @media (max-width: 1350px) {
-        width: 98%;
+        width: 99%;
+        margin-inline: auto;
+        left: auto;
 
     }
 
@@ -26,6 +28,10 @@
         width: 100%;
         z-index: 9;
 
+        @media (max-width: 1356px) {
+            height: fit-content;
+        }
+
         .nav__left {
             display: flex;
             align-items: center;
@@ -34,6 +40,11 @@
             padding-right: 1rem;
             width: 100%;
             justify-content: flex-start;
+
+            @media (max-width: 1356px) {                   
+                height: fit-content;
+                padding: 0;
+            }
 
             .nav__logo {
                 background-color: var(--title-color);
@@ -47,8 +58,9 @@
                 align-items: center;
                 margin-right: 0.4rem;
 
-                @media (max-width: 1356px) {
-                    width: 100%;
+                @media (max-width: 1356px) {                    
+                    width: 70%;
+                    padding: 0;
                 }
 
                 h1 {
@@ -56,7 +68,7 @@
                     font-size: 2rem;
                     color: var(--container-color);
                     letter-spacing: 0.05rem;
-                    text-transform: uppercase;
+                    text-transform: capitalize;
                 }
             }
         }
@@ -89,7 +101,7 @@
                     font-size: 1.5rem;
                     cursor: pointer;
                     transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-                    text-transform: uppercase;
+                    text-transform: capitalize;
                     background-color: transparent;
                     border: 2px solid var(--title-color);
                     color: var(--title-color);
@@ -158,12 +170,17 @@
                 color: var(--title-color);
                 cursor: pointer;
                 transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-                text-transform: uppercase;
+                text-transform: capitalize;
                 background-color: var(--accent-color);
                 border: 2px solid var(--title-color);
                 border-radius: 1.9rem;
-                padding: 0.3rem 1rem;
+                padding: 0.5rem 1rem;
                 height: fit-content;
+
+
+                @media (max-width: 1356px) {                    
+                    padding: 0.3rem 1rem;
+                }
 
                 &:hover {
                     color: var(--container-color);

@@ -11,9 +11,6 @@ const LogoMarquee = () => {
             img: "/assets/logos/1.png",
         },
         {
-            img: "/assets/logos/2.png",
-        },
-        {
             img: "/assets/logos/3.png",
         },
         {

@@ -1,6 +1,6 @@
 .story {
     display: grid;
-    grid-template-columns: 0.6fr 2fr;
+    grid-template-columns: 1fr;
     width: 99%;
     height: 100%;
     gap: 1.5vh;
@@ -42,6 +42,8 @@
             background-color: var(--title-color);
             border-radius: 2rem;
             padding: 1rem;
+            border: 1px solid var(--title-color);
+
 
             @media (max-width: 777px) {
                 padding: 0.5rem;
@@ -78,6 +80,7 @@
             background-color: var(--container-color);
             border-radius: 2rem;
             padding: 1rem;
+            border: 1px solid var(--title-color);
 
             a {
                 display: flex;
@@ -126,6 +129,7 @@
             border-radius: 2rem;
             object-fit: cover;
             background-color: var(--title-color);
+            border: 1px solid var(--title-color);
 
             @media (max-width: 1143px) {
                 height: 20lvh;

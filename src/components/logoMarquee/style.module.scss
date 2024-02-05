@@ -6,11 +6,23 @@
     position: relative;
     right: -0.4rem;
     overflow: hidden;
+    border: 1px solid var(--title-color);
+
+    @media (max-width: 777px) {
+        margin-inline: auto;
+        right: 0;
+    }
+
     img {
         width: 15vw;
         height: 15vh;
         object-fit: contain;
         filter: contrast(1);
+        @media (max-width: 777px) {
+            padding-right: 1rem;
+            width: 13vw;
+            height: 10vh;
+        }
 
     }
 }
