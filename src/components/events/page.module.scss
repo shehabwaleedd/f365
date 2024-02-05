@@ -14,6 +14,8 @@
     @media (max-width: 1277px) {
         grid-template-columns: 1fr;
         margin-top: 5vh;
+        width: 99%;
+        right: 0;
     }
 
     &_left {
@@ -36,7 +38,7 @@
             position: relative;
             height: fit-content;
             top: 0;
-            padding: 0.5rem;
+            padding: 1rem;
         }
 
         h2 {

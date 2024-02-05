@@ -18,7 +18,7 @@
     transform-origin: top;
 
     @media (max-width: 456px) {
-      width: 90%;
+      width: 99%;
       height: 70%;
       padding: 1rem;
     }
@@ -32,7 +32,7 @@
       padding-top: 1rem;
       @media (max-width: 456px) {
         position: relative;
-        top: 2rem;
+        top: 0rem;
         font-size: 22px;
       }
 

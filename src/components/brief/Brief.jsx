@@ -9,9 +9,6 @@ const Brief = () => {
 
     return (
         <section className={styles.story}>
-            <div>
-                <F365 />
-            </div>
             <div className={styles.story__content}>
                 <div className={styles.story__content__left}>
                     <h2><span>/</span> Our Story</h2>
