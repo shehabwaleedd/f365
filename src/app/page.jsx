@@ -15,23 +15,27 @@ import Events from '@/components/events/Events';
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const [hasAnimationShown, setHasAnimationShown] = useState(sessionStorage.getItem('hasAnimationShown'));
+  const [hasAnimationShown, setHasAnimationShown] = useState(false); // Default to false
 
 
 
   const [windowWidth, setWindowWidth] = useState(null);
 
   useEffect(() => {
-    // Set the initial window width
-    setWindowWidth(window.innerWidth);
-
-    // Update the window width on resize
-    const handleResize = () => {
+    // Access sessionStorage only on the client-side
+    if (typeof window !== "undefined") {
+      setHasAnimationShown(sessionStorage.getItem('hasAnimationShown') === 'true');
+      // Set the initial window width
       setWindowWidth(window.innerWidth);
-    };
 
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+      // Update the window width on resize
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
   }, []);
 
 
