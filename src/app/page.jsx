@@ -47,10 +47,10 @@ export default function Home() {
         {!hasAnimationShown && <Opening isLoading={isLoading} setIsLoading={setIsLoading} />}
       </AnimatePresence>
       <Landing windowWidth={windowWidth} />
-      <What />
-      <Marquee />
       <Brief windowWidth={windowWidth} />
+      <What />
       <Statement />
+      <Marquee />
       <Events windowWidth={windowWidth} />
       <LogoMarquee />
     </main>
