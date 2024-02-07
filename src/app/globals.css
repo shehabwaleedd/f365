@@ -1,6 +1,6 @@
 :root {
   /* Dark Batik Pink */
-  --container-color: #ffffff;
+  --container-color: #F9F5EC;
   /* Batik Pink */
   --subtitle-color: #404040;
   --title-color: #1b1b1b;
@@ -11,9 +11,9 @@
   --hover-color: #aa5380;
   --accent-color: #ff7da6;
   /* light baby pink */
-  --background-color: #ffffff; 
+  --background-color: #F9F5EC; 
   --color-number: #999;
-  --border-color: #ff7da6;
+  --border-color: #c1c1c1;
 
   /* Responsive Sizes  */
 
@@ -24,21 +24,24 @@
 
   /* Fonts */
 
-  --body-font: 'Asap-Regular', sans-serif;
-  --subtitle-font: 'Asa[-Light', sans-serif;
-  --title-font: 'Asap-Medium', sans-serif;
-  --heading-font: 'Asap-Bold', sans-serif;
-  --logo-font: 'Asap-ExtraBold', sans-serif;
-  --nav-font: 'Asap-Black', sans-serif;
+  --body-font: 'Poppins-Regular', sans-serif;
+  --subtitle-font: 'Poppins-Light', sans-serif;
+  --title-font: 'Poppins-Medium', sans-serif;
+  --heading-font: 'Poppins-Bold', sans-serif;
+  --logo-font: 'Poppins-ExtraBold', sans-serif;
+  --nav-font: 'Poppins-Black', sans-serif;
 
   /* Font Sizes Based on Golden Ratio */
 
+  --small-font-size: 0.618rem;
   --normal-font-size: 1rem;
+  --body-font-size: 1.236rem;
   --medium-font-size: 1.318rem;
   --big-font-size: 1.618rem;
   --bigger-font-size: 2.618rem;
   --biggest-font-size: 4.236rem;
-  --h1-font-size: 6.854rem;
+  --navigaion-font-size: 5.9vh;
+
 }
 
 * {
@@ -130,10 +133,15 @@ img {
 
 
 @font-face {
-  font-family: 'Asap-Regular';
-  src: url('../../public/fonts/Asap-Regular.woff2') format('woff2'),
-    url('../../public/fonts/Asap-Regular.woff') format('woff'),
-    url('../../public/fonts/Asap-Regular.ttf') format('truetype');
+  font-family: 'Poppins-Light';
+  src: url('../../public/fonts/Poppins-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins-Regular';
+  src: url('../../public/fonts/Poppins-Regular.ttf') format('truetype');
   font-weight: 400;
   font-display: swap;
   font-style: normal;
@@ -141,10 +149,8 @@ img {
 
 
 @font-face {
-  font-family: 'Asap-Medium';
-  src: url('../../public/fonts/Asap-Medium.woff2') format('woff2'),
-    url('../../public/fonts/Asap-Medium.woff') format('woff'),
-    url('../../public/fonts/Asap-Medium.ttf') format('truetype');
+  font-family: 'Poppins-Medium';
+  src:  url('../../public/fonts/Poppins-Medium.ttf') format('truetype');
   font-weight: 500;
   font-display: swap;
   font-style: normal;
@@ -152,10 +158,8 @@ img {
 
 
 @font-face {
-  font-family: 'Asap-Bold';
-  src: url('../../public/fonts/Asap-Bold.woff2') format('woff2'),
-    url('../../public/fonts/Asap-Bold.woff') format('woff'),
-    url('../../public/fonts/Asap-Bold.ttf') format('truetype');
+  font-family: 'Poppins-Bold';
+  src: url('../../public/fonts/Poppins-Bold.ttf') format('truetype');
   font-weight: 700;
   font-display: swap;
   font-style: normal;

@@ -2,18 +2,19 @@
 
 import React, { useState, useCallback, useEffect } from 'react'
 import Head from 'next/head'
-
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import Nav from './nav/index';
 import { FiMenu } from "react-icons/fi";
 import styles from './style.module.scss'
 import Link from 'next/link'
 import dynamic from 'next/dynamic';
+import getChars from '@/animation/animatedHeaders/getChars';
 import Calendly from './calendly/Calendly';
 
 const Navbar = () => {
     const [navOpen, setNavOpen] = useState(false);
     const [showCalendlyModal, setShowCalendlyModal] = useState(false);
+    const controls = useAnimation();
     const [windowWidth, setWindowWidth] = useState(null);
 
     useEffect(() => {
@@ -39,80 +40,48 @@ const Navbar = () => {
 
 
     return (
-        <motion.nav className={styles.nav} >
-            <div className={styles.nav__container}>
-                <div className={styles.nav__left}>
-                    <Link className={styles.nav__logo} href="/">
-                        <h1 className={styles.logo__name}>F365</h1>
-                    </Link>
-                    <div className={styles.nav__middle}>
-                        <ul className={styles.nav__list}>
-                            <Link className={styles.nav__link} href="/portraits">
-                                <motion.li className={styles.nav__item}>
-                                    Events
-                                </motion.li>
-                            </Link>
-                            <Link className={styles.nav__link} href="/history">
-                                <motion.li className={styles.nav__item}>
-                                    About
-                                </motion.li>
-                            </Link>
-                            <Link className={styles.nav__link} href="/politics">
-                                <motion.li className={styles.nav__item}>
-                                    Contact
-                                </motion.li>
-                            </Link>
-
-                        </ul>
+        <header>
+            <motion.nav className={styles.navbar}
+                animate={controls}
+                transition={{ ease: "easeOut" }}>
+                <Link className={styles.navbar__logo} href="/">
+                    <div className={styles.navbar__logo_anim}>
+                        {getChars('F365')}
                     </div>
+                </Link>
+                <div className={styles.navbar__links}>
+                    <ul>
+                        <li>
+                            <Link href="/events">
+                                Events
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/services">
+                                Services
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/about">
+                                About
+                            </Link>
+                        </li>
+                        <li>
+                            <Link href="/contact">
+                                Contact
+                            </Link>
+                        </li>
+                    </ul>
                 </div>
-                <div className={styles.nav__right}>
-                    <AnimatePresence>
-                        {navOpen && (
-                            <motion.div
-                                className={styles.extendedMenu}
-                                initial={{ opacity: 0, x: 100 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: 100 }}
-                            >
-                                <Link className={styles.nav__link} href="/mission">
-                                    <motion.li
-                                        className={styles.nav__item}
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                    >
-                                        Our Mission
-                                    </motion.li>
-                                </Link>
-                                <Link className={styles.nav__link} href="/about">
-                                    <motion.li
-                                        className={styles.nav__item}
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}>
-                                        About Us
-                                    </motion.li>
-                                </Link>
-                                <Link className={styles.nav__link} href="/careers">
-                                    <motion.li
-                                        className={styles.nav__item}
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
-                                        exit={{ opacity: 0 }}
-                                    >
-                                        Careers
-                                    </motion.li>
-                                </Link>
-                            </motion.div>
-                        )}
-                    </AnimatePresence>
-                    <h2 className={styles.nav__item} onClick={toggleNavOpen}>
-                        Menu
-                    </h2>
+
+                <div className={styles.menu} onClick={toggleNavOpen}>
+                    <span><FiMenu style={{fontSize: "2rem", position: "relative", right: "0.5rem"}}/></span>
                 </div>
-            </div>
-        </motion.nav >
+                <AnimatePresence mode='wait'>
+                    {navOpen && <Nav setNavOpen={setNavOpen} />}
+                </AnimatePresence>
+            </motion.nav>
+        </header>
     )
 }
 

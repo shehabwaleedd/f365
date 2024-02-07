@@ -16,14 +16,14 @@ export const opacity = {
 
 export const height = {
     initial: {
-        height: 0
+        opacity: 0
     },
     enter: {
-        height: "110vh",
+        opacity: 1,
         transition
     },
     exit: {
-        height: 0,
+        opacity: 0,
         transition
     }
 }

@@ -2,6 +2,7 @@
 import styles from './page.module.scss'
 import { projects } from './data';
 import Card from './Card';
+import Link from 'next/link';
 import { useScroll } from 'framer-motion';
 import { useEffect, useRef } from 'react';
 
@@ -17,6 +18,9 @@ const Events = ({ windowWidth }) => {
             <div className={styles.events_left}>
                 <h2><span>/</span> Our Recent Events</h2>
                 <p>At F365, we are proud to host a diverse range of events designed to inspire, empower, and connect women from all walks of life. Our events are carefully curated to support your journey in health, personal development, and career progression. Whether it&apos;s through interactive workshops, networking gatherings, or empowering seminars, each event is an opportunity to learn, grow, and be part of a vibrant community committed to making a positive impact.</p>
+                <Link href="/events">
+                    <span>View All Events</span>
+                </Link>
             </div>
             <div className={styles.events_right}>
                 {

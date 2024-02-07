@@ -19,9 +19,6 @@ const Brief = () => {
                         More About Our Story
                     </Link>
                 </div>
-                <div className={styles.story__content__video}>
-                    <video src="/mainVideo.mp4" loop autoPlay muted playsInline security='restricted' preload="metadata" />
-                </div>
             </div>
         </section>
     )

@@ -9,7 +9,7 @@ import { slideUp } from '@/animation/animatedSubs/animation';
 
 const Statement = () => {
     const description = useRef(null);
-    const isInView = useInView(description)
+    const isInView = useInView(description, { once: true })
     const phrase1 = "At F365, we passionately believe in empowering women to lead healthier, more fulfilled lives, embracing both personal and professional growth."
     return (
         <section className={styles.statement} ref={description}>

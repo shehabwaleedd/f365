@@ -22,7 +22,7 @@
 
     li {
         overflow: hidden;
-        color: var(--background-color);
+        color: var(--title-color);
 
         @media (max-width: 456px) {
             text-align: left;
@@ -30,13 +30,13 @@
         }
 
         span {
-            color: var(--background-color);
+            color: var(--title-color);
             font-family: var(--body-font);
             overflow: hidden;
         }
 
         a {
-            color: var(--background-color);
+            color: var(--title-color);
             text-decoration: none;
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             overflow: hidden;

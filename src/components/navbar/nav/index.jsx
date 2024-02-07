@@ -14,8 +14,8 @@ const links = [
     href: "/events",
   },
   {
-    title: "Community",
-    href: "/community",
+    title: "Services",
+    href: "/services",
   },
   {
     title: "About",
