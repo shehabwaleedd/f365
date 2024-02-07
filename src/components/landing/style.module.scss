@@ -26,7 +26,6 @@
         font-size: 1.15rem;
         font-family: var(--body-font);
         border-radius: 2rem;
-        position: relative;
         z-index: 9;
         transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
         
@@ -61,9 +60,9 @@
 
         @media (max-width: 1143px) {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 40lvh;
+            justify-content: flex-start;
+            align-items: flex-start;
+            height: 100%;
         }
 
         video {
@@ -73,6 +72,9 @@
             border: 2px solid var(--container-color);
             border-radius: 2rem;
             filter: brightness(50%);
+            @media (max-width: 1143px) {
+                height: 40lvh;
+            }
         }
 
         .hero_text {
@@ -200,7 +202,9 @@
                 height: fit-content;
 
                 @media (max-width: 1143px) {
-                    grid-template-columns: 1fr;
+                    display: flex;
+                    flex-direction: column;
+                    height: 100%;
                 }
 
                 p {
