@@ -84,7 +84,7 @@ const Register = () => {
                 </div>
                 {registerFormik.errors.name ? <div className={styles.register__error}>{registerFormik.errors.name}</div> : null}
                 {registerFormik.errors.email ? <div className={styles.register__error}>{registerFormik.errors.email}</div> : null}
-                <div className={styles.register__form__group}>
+                <div className={styles.register__form__group__passwords}>
                     <div className={styles.register__form__group_column}>
                         <label htmlFor="password"> Password</label>
                         <input type="password" placeholder="Password" className={styles.register__input} name="password" onChange={registerFormik.handleChange} value={registerFormik.values.password} />

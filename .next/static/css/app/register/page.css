@@ -21,8 +21,13 @@
   width: 100%;
   max-width: 50vw;
   padding: 2rem;
-  border: 1px solid #000;
+  border: 1px solid var(--border-color);
   border-radius: 1rem;
+}
+@media (max-width: 1368px) {
+  .page_register__form__s9AZG {
+    max-width: 99vw;
+  }
 }
 .page_register__form__group__SDl8Y {
   display: flex;
@@ -34,6 +39,16 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+}
+.page_register__form__group__passwords___oxz4 {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+@media (max-width: 456px) {
+  .page_register__form__group__passwords___oxz4 {
+    flex-direction: column;
+  }
 }
 .page_register__form__s9AZG label {
   color: var(--title-color);

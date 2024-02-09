@@ -20,6 +20,11 @@
   border: 1px solid var(--border-color);
   border-radius: 1rem;
 }
+@media (max-width: 1368px) {
+  .page_container__jXqyR .page_form__kHrA4 {
+    max-width: 80vw;
+  }
+}
 .page_container__jXqyR .page_form__kHrA4 input {
   width: 100%;
   padding: 10px;
