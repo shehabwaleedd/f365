@@ -120,8 +120,8 @@ img {
 }
 
 ::selection {
-  background-color: var(--accent-color-second);
-  color: var(--nav-overlay-color);
+  background-color: var(--title-color);
+  color: var(--container-color);
 }
 
 
@@ -595,6 +595,7 @@ img {
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   z-index: 99;
+  gap: 1vw;
 }
 @media (max-width: 768px) {
   .style_navbar__links__Cb3xE {

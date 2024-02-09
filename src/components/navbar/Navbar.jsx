@@ -50,32 +50,48 @@ const Navbar = () => {
                     </div>
                 </Link>
                 <div className={styles.navbar__links}>
-                    <ul>
-                        <li>
-                            <Link href="/events">
-                                Events
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/services">
-                                Services
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/about">
-                                About
-                            </Link>
-                        </li>
-                        <li>
-                            <Link href="/contact">
-                                Contact
-                            </Link>
-                        </li>
-                    </ul>
+                    <div>
+                        <ul>
+                            <li>
+                                <Link href="/events">
+                                    Events
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/services">
+                                    Services
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/about">
+                                    About
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/contact">
+                                    Contact
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                <Link href="/login">
+                                    Login
+                                </Link>
+                            </li>
+                            <li>
+                                <Link href="/register">
+                                    Register
+                                </Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
                 <div className={styles.menu} onClick={toggleNavOpen}>
-                    <span><FiMenu style={{fontSize: "2rem", position: "relative", right: "0.5rem"}}/></span>
+                    <span><FiMenu style={{ fontSize: "2rem", position: "relative", right: "0.5rem" }} /></span>
                 </div>
                 <AnimatePresence mode='wait'>
                     {navOpen && <Nav setNavOpen={setNavOpen} />}

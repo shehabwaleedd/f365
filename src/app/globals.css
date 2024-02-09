@@ -117,8 +117,8 @@ img {
 }
 
 ::selection {
-  background-color: var(--accent-color-second);
-  color: var(--nav-overlay-color);
+  background-color: var(--title-color);
+  color: var(--container-color);
 }
 
 

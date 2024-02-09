@@ -13,7 +13,7 @@
     width: 100%;
     height: 100%;
     background-color: var(--container-color);
-    color: var(--background-color);
+    color: var(--title-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +27,7 @@
     transform: translate(-50%, -50%);
     display: flex;
     z-index: 99999;
-    color: var(--background-color);
+    color: var(--title-color);
     overflow: hidden;
 
 

@@ -19,6 +19,108 @@
     font-size: 3.5vh;
   }
 }
+/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/becomePartner/style.module.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.style_partner__Fh6sx {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
+  border-radius: 2rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 50vw;
+  height: -moz-fit-content;
+  height: fit-content;
+  transform: translate(-50%, -50%);
+  z-index: 9900;
+}
+@media (max-width: 1143px) {
+  .style_partner__Fh6sx {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+.style_partner__content__1fALZ {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  padding: 2rem;
+}
+.style_partner__content__form__5Nmfc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 1rem;
+}
+.style_partner__content__form__5Nmfc input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #000;
+  border-radius: 5px;
+}
+.style_partner__content__form__5Nmfc input:focus {
+  outline: none;
+  border-color: #000;
+}
+.style_partner__content__form__5Nmfc .style_error__ST7Zc {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #000;
+  border-radius: 5px;
+  color: #721c24;
+  background-color: #f8d7da;
+}
+.style_partner__content__form_group__ky8n2 {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+.style_partner__title__AYrGE {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+.style_partner__description__zX2vb {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+.style_partner__btn__9y_Bv {
+  padding: 10px 20px;
+  font-size: 1.5rem;
+  background-color: var(--accent-color);
+  border: 2px solid #000;
+  width: 100%;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.style_partner__btn__9y_Bv:hover {
+  background-color: #000;
+  color: #fff;
+}
+.style_partner__close__GELoi {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  font-size: 3rem;
+  background-color: transparent;
+  cursor: pointer;
+}
 /*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/components/landing/style.module.scss ***!
   \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
@@ -35,6 +137,7 @@
   gap: 1rem;
   top: 8.5vh;
   right: -0.5rem;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 @media (max-width: 1143px) {
   .style_landing__XiuUH {
@@ -478,65 +581,6 @@
   }
 }
 /*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/animation/marquee/Marquee.css ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************/
-.marquee {
-    width: 99%;
-    padding: 0rem 1.25rem;
-    border-top: 1px solid var(--text-color);
-    border-bottom: 1px solid var(--text-color);
-    text-align: center;
-    overflow: hidden;
-    height: 100%;
-    background-color: var(--container-color);
-    border-radius: 2rem;
-    position: relative;
-    margin: 0 auto;
-}
-
-.marquee h3 {
-    font-size: 5.875rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.marquee .marquee-wrapper {
-    width: 6250rem;
-    animation: marqueeAnimation 68s linear 0s infinite running;
-}
-
-.marquee h3 .marquee-title {
-    margin-right: 1.25rem;
-    float: left;
-}
-
-.text-stroke-black {
-    color: transparent;
-    -webkit-text-stroke: 1px;
-    -webkit-text-stroke-color: var(--subtitle-color);
-}
-
-@keyframes marqueeAnimation {
-    100% {
-        transform: translateX(-4600px);
-    }
-}
-
-
-@media (max-width: 992px) {
-    .marquee h3 {
-        font-size: 60px;
-    }
-}
-
-@media (max-width: 549px) {
-    .marquee h3 {
-        font-size: 50px;
-    }
-}
-
-
-/*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[12].use[3]!./src/animation/opening/Opening.css ***!
   \*******************************************************************************************************************************************************************************************************************************************************************************/
 .pre-loader {
@@ -555,7 +599,7 @@
     width: 100%;
     height: 100%;
     background-color: var(--container-color);
-    color: var(--background-color);
+    color: var(--title-color);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -569,7 +613,7 @@
     transform: translate(-50%, -50%);
     display: flex;
     z-index: 99999;
-    color: var(--background-color);
+    color: var(--title-color);
     overflow: hidden;
 
 

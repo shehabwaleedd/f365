@@ -1,8 +1,6 @@
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
-import SmoothScrolling from "@/components/SmoothScrolling";
 import dynamic from "next/dynamic";
-
 const Footer = dynamic(() => import("@/components/footer"), { ssr: false });
 
 export const metadata = {
@@ -16,11 +14,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className="App">
         <Navbar />
-        <SmoothScrolling>
-          {children}
-        </SmoothScrolling>
+        {children}
         <Footer />
       </body>
     </html>
