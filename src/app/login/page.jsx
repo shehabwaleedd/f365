@@ -5,70 +5,68 @@ import { useFormik } from 'formik';
 import * as yup from 'yup'
 import axios from 'axios';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import styles from "./page.module.scss"
 
 
 
 const Page = () => {
     const [errorFromDataBase, setErrorFromDataBase] = useState('')
+    const [isLoading, setIsLoading] = useState(false);
+    const router = useRouter();
     let validationSchema = yup.object({
         email: yup.string().email().required(),
         password: yup.string().matches(/^(?=.*[A-Za-z])[A-Za-z\d]{6,}$/, 'at least 6 charchter and start with upperCase').required(),
 
     })
-
-
-
-    const [isLoading, setisLoading] = useState(false)
     const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://api.example.com'
 
 
-    const LoginFormik = useFormik({
+
+    const loginFormik = useFormik({
         initialValues: {
             email: '',
             password: '',
         },
         validationSchema,
-        onSubmit: async values => {
-            setisLoading(true)
-            await axios.post(`${baseUrl}/auth/login`, values).then((data) => {
-                console.log(data.data.token);
-                localStorage.setItem('token', data.data.token)
-                setisLoading(false)
-                navigate('/')
-            }).catch((err) => {
-                setErrorFromDataBase(err.response.data.message)
-                setisLoading(false)
-            })
-
+        onSubmit: async (values) => {
+            setIsLoading(true);
+            try {
+                const response = await axios.post(`${baseUrl}/auth/login`, values);
+                localStorage.setItem('token', response.data.token);
+                router.push('/'); // Navigate to the home page
+            } catch (err) {
+                setErrorFromDataBase(err.response?.data.message || 'An error occurred');
+            } finally {
+                setIsLoading(false);
+            }
         },
     });
 
-
     return (
         <div className={styles.container}>
-            <form onSubmit={LoginFormik.handleSubmit} className={styles.form}>
+            <form onSubmit={loginFormik.handleSubmit} className={styles.form}>
                 <h1 className={styles.title}>Login</h1>
                 <input
                     type="email"
                     name="email"
                     placeholder="Email"
-                    onChange={LoginFormik.handleChange}
-                    value={LoginFormik.values.email}
+                    onChange={loginFormik.handleChange}
+                    value={loginFormik.values.email}
                     className={styles.input}
                 />
-                {LoginFormik.errors.email ? <div className={styles.error}>{LoginFormik.errors.email}</div> : null}
+                {loginFormik.errors.email && <div className={styles.error}>{loginFormik.errors.email}</div>}
                 <input
                     type="password"
                     name="password"
                     placeholder="Password"
-                    onChange={LoginFormik.handleChange}
-                    value={LoginFormik.values.password}
+                    onChange={loginFormik.handleChange}
+                    value={loginFormik.values.password}
                     className={styles.input}
                 />
-                {LoginFormik.errors.password ? <div className={styles.error}>{LoginFormik.errors.password}</div> : null}
-                <button type="submit" className={styles.button}>Login</button>
-                {errorFromDataBase ? <div className={styles.error}>{errorFromDataBase}</div> : null}
+                {loginFormik.errors.password && <div className={styles.error}>{loginFormik.errors.password}</div>}
+                <button type="submit" className={styles.button} disabled={isLoading}>{isLoading ? 'Logging in...' : 'Login'}</button>
+                {errorFromDataBase && <div className={styles.error}>{errorFromDataBase}</div>}
             </form>
 
             <div className={styles.link}>
@@ -76,7 +74,6 @@ const Page = () => {
                     <span>Don&apos;t have an account? Sign up</span>
                 </Link>
             </div>
-
         </div>
 
     )

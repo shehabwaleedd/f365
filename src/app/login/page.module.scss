@@ -21,9 +21,11 @@
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid var(--border-color);
-            border-radius: 2rem;
+            border: 2px solid var(--border-color);
+            border-radius: 5px;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
             &:focus {
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
                 outline: none;
                 border-color: var(--text-color);
             }
@@ -61,11 +63,24 @@
     .link {
         margin-top: 10px;
         text-align: center;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         a {
             color: var(--text-color);
             text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            &::after {
+                content: "";
+                display: block;
+                width: 0;
+                height: 1px;
+                background-color: var(--text-color);
+                transition: width 0.3s;
+            }
             &:hover {
-                text-decoration: underline;
+                transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+                &::after {
+                    width: 100%;
+                }
             }
         }
     }
