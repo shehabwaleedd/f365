@@ -1,0 +1,33 @@
+.changePassword {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+    height: 100%;
+    padding: 2rem;
+    position: relative;
+    input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid var(--border-color);
+        border-radius: 0.5rem;
+        background-color: var(--background-color);
+        color: var(--title-color);
+    }
+    label {
+        font-size: 1.25rem;
+        color: var(--title-color);
+    }
+    button {
+        padding-left: 0;
+        background-color: var(--accent-color);
+        color: var(--background-color);
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 2rem;
+        margin-top: 1rem;
+        width: 100%;
+    }
+}

@@ -14,7 +14,9 @@ const Brief = () => {
                     <h2><span>/</span> Our Story</h2>
                 </div>
                 <div className={styles.story__content__right}>
-                    <AnimatedSubs phrase={"F365, founded in 2023 by Asma Sami and Nihal Sami, is a pioneering wellness community dedicated to supporting women's health, personal development, and career progression. Incubated by in5 Dubai, an initiative of the Dubai Government, F365 empowers women through innovative programs and resources, fostering a vibrant environment for growth and success in all aspects of life."} />
+                    <p>
+                        F365, founded in 2023 by Asma Sami and Nihal Sami, is a pioneering wellness community dedicated to supporting women&apos;s health, personal development, and career progression. Incubated by in5 Dubai, an initiative of the Dubai Government, F365 empowers women through innovative programs and resources, fostering a vibrant environment for growth and success in all aspects of life.
+                    </p>
                     <Link href="/about">
                         More About Our Story
                     </Link>

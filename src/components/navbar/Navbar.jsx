@@ -10,13 +10,17 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic';
 import getChars from '@/animation/animatedHeaders/getChars';
 import Calendly from './calendly/Calendly';
+import { useUser } from "@/context/useUser"
+import { useRouter } from "next/navigation"
+import { logout, useLogout } from '@/context/auth';
 
 const Navbar = () => {
     const [navOpen, setNavOpen] = useState(false);
     const [showCalendlyModal, setShowCalendlyModal] = useState(false);
     const controls = useAnimation();
     const [windowWidth, setWindowWidth] = useState(null);
-
+    const { user, loading, userLoggedIn } = useUser();
+    const router = useRouter()
     useEffect(() => {
         // Set the initial window width
         setWindowWidth(window.innerWidth);
@@ -37,7 +41,10 @@ const Navbar = () => {
     const toggleCalendlyModal = () => {
         setShowCalendlyModal(prevShow => !prevShow);
     };
-
+    const handleLogout = () => {
+        logout();
+        router.push("/login")
+    };
 
     return (
         <header>
@@ -75,18 +82,33 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div>
-                        <ul>
-                            <li>
-                                <Link href="/login">
-                                    Login
-                                </Link>
-                            </li>
-                            <li>
-                                <Link href="/register">
-                                    Register
-                                </Link>
-                            </li>
-                        </ul>
+                        {!userLoggedIn ? (
+                            <ul>
+                                <li>
+                                    <Link href="/login">
+                                        Login
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link href="/register">
+                                        Register
+                                    </Link>
+                                </li>
+                            </ul>
+                        ) : (
+                            <ul>
+                                <li>
+                                    <Link href="/account">
+                                        Account
+                                    </Link>
+                                </li>
+                                <button onClick={handleLogout}>
+                                    <span>
+                                        Logout
+                                    </span>
+                                </button>
+                            </ul>
+                        )}
                     </div>
                 </div>
 

@@ -105,6 +105,10 @@
         font-size: 3rem;
         background-color: transparent;
         cursor: pointer;
+
+        @media (max-width: 456px) {
+            right: 0;
+        }
     }
 
 }

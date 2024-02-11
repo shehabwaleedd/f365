@@ -4,12 +4,17 @@
 import React from 'react'
 import styles from "./style.module.scss"
 import Link from 'next/link'
+import { usePathname } from 'next/navigation';
 
 
 
-const index = () => {
+const Index = () => {
+
+    const router = usePathname();
+    const isAccountPage = router === '/account';
+
     return (
-        <footer className={styles.footer}>
+        <footer className={styles.footer} style={{ display: isAccountPage ? 'none' : 'block' }}>
             <div className={styles.footer__upper}>
                 <div className={styles.footer__upper__left}>
                     <h2>Contact Us</h2>
@@ -101,4 +106,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Index

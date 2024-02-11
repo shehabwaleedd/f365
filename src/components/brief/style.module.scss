@@ -78,8 +78,6 @@
             width: 100%;
             height: auto;
             transition: all 1s cubic-bezier(0.16, 1, 0.3, 1);
-
-
             padding: 1rem;
 
 
@@ -95,32 +93,18 @@
             }
 
             p {
-                span {
-                    font-family: var(--body-font);
-                    color: var(--container-color);
-
-                    span {
-                        color: var(--title-color);
-                        font-size: 1.8rem;
-                        line-height: 1;
-                        font-weight: 400;
-                        letter-spacing: normal;
-                        text-transform: lowercase;
-                        font-display: swap;
-                    }
-
-                    @media (max-width: 777px) {
-                        font-size: 3.3vh;
-                    }
+                font-family: var(--body-font);
+                color: var(--title-color);
+                font-size: 1.8rem;
+                line-height: 1.3;
+                font-weight: 400;
+                letter-spacing: normal;
+                text-transform: lowercase;
+                font-display: swap;
+                @media (max-width: 777px) {
+                    font-size: 1.4rem;
                 }
             }
-
-            @media (max-width: 1143px) {
-                padding: 2rem;
-            }
-
-
-
         }
     }
 }

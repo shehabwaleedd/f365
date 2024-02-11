@@ -87,7 +87,26 @@
                         color: var(--accent-color);
                     }
                 }
-
+            }
+            button {
+                align-items: center;
+                justify-content: center;
+                height: 6.5vh;
+                transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+                cursor: pointer;
+                font-display: swap;
+                user-select: none;
+                font-family: var(--body-font);
+                font-weight: 500;
+                font-size: var(--medium-font-size);
+                letter-spacing: 0.1rem;
+                text-transform: capitalize;
+                background-color: transparent;
+                &:hover {
+                    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+                    color: var(--accent-color);
+                }
+            
             }
             
         }

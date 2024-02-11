@@ -8,58 +8,61 @@ import styles from "./page.module.scss"
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
+import { CountryDropdown, RegionDropdown } from 'react-country-region-selector';
 
 const Register = () => {
     const [errorFromDataBase, setErrorFromDataBase] = useState('')
-    const [profilePic, setProfilePic] = useState(null);
+    const [avatar, setAvatar] = useState(null);
     const router = useRouter();
 
 
     let validationSchema = yup.object({
         name: yup.string().required(),
         email: yup.string().email().required(),
-        password: yup.string().matches(/^(?=.*[A-Za-z])[A-Za-z\d]{6,}$/, 'at least 6 charchter and start with upperCase').required(),
-        repeatPassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords must match'),
-        phone: yup.string().required(),
-        location: yup.string().required(),
-        company: yup.string().required(),
+        age: yup.number().positive("Age must be a positive number").integer("Age must be an integer").required("Age is required"),
+        password: yup.string().matches(/^(?=.*[A-Za-z])(?=.*\d).{8,}$/, 'at least 6 charchter and start with upperCase').required(),
+        rePassword: yup.string().oneOf([yup.ref('password'), null], 'Passwords must match'),
+        phone: yup.number().required(),
+        country: yup.string().required(),
+        region: yup.string().required(),
+        company: yup.string(),
     })
 
-    const handleProfilePicChange = (event) => {
-        setProfilePic(event.currentTarget.files[0]);
+    const handleAvatarChange = (event) => {
+        setAvatar(event.currentTarget.files[0]);
     };
 
     const registerFormik = useFormik({
         initialValues: {
             name: '',
             email: '',
+            age: '',
             password: '',
-            repeatPassword: '',
+            rePassword: '',
             phone: '',
-            location: '',
+            country: '',
+            region: '',
             company: '',
         },
-        validationSchema: validationSchema,
-        onSubmit: (values, { setSubmitting }) => {
+        validationSchema,
+        onSubmit: async (values, { setSubmitting }) => {
             const formData = new FormData();
             Object.keys(values).forEach(key => formData.append(key, values[key]));
-            if (profilePic) formData.append('profilePic', profilePic);
+            if (avatar) formData.append('avatar', avatar);
 
-            axios.post('http://localhost:3000/user/register', formData, {
-                headers: { 'Content-Type': 'multipart/form-data' },
-            })
-            .then(response => {
+            try {
+                const response = await axios.post('https://events-nsih.onrender.com/user/register', formData, {
+                    headers: { 'Content-Type': 'multipart/form-data' },
+                });
                 localStorage.setItem('token', response.data.token);
-                setSubmitting(false);
-                router.push('/');
-            })
-            .catch(error => {
+                router.push('/'); // Navigate to home or dashboard
+            } catch (error) {
                 setErrorFromDataBase(error.response?.data.message || 'An error occurred');
+            } finally {
                 setSubmitting(false);
-            });
+            }
         },
-
-    })
+    });
 
 
     return (
@@ -82,6 +85,52 @@ const Register = () => {
                         <input type="email" placeholder="Email" className={styles.register__input} name="email" onChange={registerFormik.handleChange} value={registerFormik.values.email} />
                     </div>
                 </div>
+
+                <div className={styles.register__form__group}>
+                    <div className={styles.register__form__group_column}>
+                        <label htmlFor="birthDate">
+                            Age
+                        </label>
+                        <select name="age" onChange={registerFormik.handleChange} value={registerFormik.values.age} className={styles.register__input}>
+                            <option value="">Select Age</option>
+
+                            {Array.from({ length: 50 }, (_, i) => i + 17).map((age) => <option key={age} value={age}>{age}</option>)}
+                        </select>
+
+                    </div>
+
+                    <div className={styles.register__form__group_column}>
+                        <label htmlFor="country">
+                            Country
+                        </label>
+                        <CountryDropdown
+                            value={registerFormik.values.country}
+                            onChange={(val) => registerFormik.setFieldValue('country', val)}
+                            priorityOptions={
+                                ['US', 'GB', 'CA', 'AU', 'DE',
+                                    'EG', 'FR', 'ES', 'NL', 'BR',
+                                    'PT', 'MX', 'IN', 'CN', 'JP',
+                                    'RU', 'IT', 'SE', 'NO', 'DK',
+                                    'FI', 'BE', 'CH', 'AT', 'IE',
+                                    'SG', 'ZA', 'NZ', 'AR', 'CL',
+                                    'CO', 'PE', 'VE', 'EC', 'UY',
+                                ]
+                            }
+                        />
+                    </div>
+
+
+                    <div className={styles.register__form__group_column}>
+                        <label htmlFor="region">
+                            Region
+                        </label>
+                        <RegionDropdown
+                            country={registerFormik.values.country}
+                            value={registerFormik.values.region}
+                            onChange={(val) => registerFormik.setFieldValue('region', val)} />
+                    </div>
+
+                </div>
                 {registerFormik.errors.name ? <div className={styles.register__error}>{registerFormik.errors.name}</div> : null}
                 {registerFormik.errors.email ? <div className={styles.register__error}>{registerFormik.errors.email}</div> : null}
                 <div className={styles.register__form__group__passwords}>
@@ -91,23 +140,17 @@ const Register = () => {
                     </div>
                     <div className={styles.register__form__group_column}>
                         <label htmlFor="password">Repeat Password</label>
-                        <input type="password" placeholder="Repeat Password" className={styles.register__input} name="repeatPassword" onChange={registerFormik.handleChange} value={registerFormik.values.repeatPassword} />
+                        <input type="password" placeholder="Repeat Password" className={styles.register__input} name="rePassword" onChange={registerFormik.handleChange} value={registerFormik.values.rePassword} />
                     </div>
                     <div className={styles.register__form__group_column}>
-                        <label htmlFor="text"> Phone </label>
-                        <input type="text" placeholder="Phone" className={styles.register__input} name="phone" onChange={registerFormik.handleChange} value={registerFormik.values.phone} />
+                        <label htmlFor="tel"> Phone </label>
+                        <input type="tel" placeholder="Phone" className={styles.register__input} name="phone" onChange={registerFormik.handleChange} value={registerFormik.values.phone} />
                     </div>
                 </div>
                 {registerFormik.errors.password ? <div className={styles.register__error}>{registerFormik.errors.password}</div> : null}
-                {registerFormik.errors.repeatPassword ? <div className={styles.register__error}>{registerFormik.errors.repeatPassword}</div> : null}
+                {registerFormik.errors.rePassword ? <div className={styles.register__error}>{registerFormik.errors.rePassword}</div> : null}
                 {registerFormik.errors.phone ? <div className={styles.register__error}>{registerFormik.errors.phone}</div> : null}
                 <div className={styles.register__form__group}>
-
-                    <div className={styles.register__form__group_column}>
-                        <label htmlFor="text"> Location </label>
-                        <input type="text" placeholder="Location" className={styles.register__input} name="location" onChange={registerFormik.handleChange} value={registerFormik.values.location} />
-                    </div>
-
                     <div className={styles.register__form__group_column}>
                         <label htmlFor="text"> Company </label>
                         <input type="text" placeholder="Company" className={styles.register__input} name="company" onChange={registerFormik.handleChange} value={registerFormik.values.company} />
@@ -117,14 +160,14 @@ const Register = () => {
                 {registerFormik.errors.location ? <div className={styles.register__error}>{registerFormik.errors.location}</div> : null}
                 {registerFormik.errors.company ? <div className={styles.register__error}>{registerFormik.errors.company}</div> : null}
 
-                <div className={styles.register__form__group}>
-                    <div className={styles.register__form__group_column}>
-                        <label htmlFor="profilePic">Profile Picture</label>
-                        <input type="file" id="profilePic" name="profilePic" onChange={handleProfilePicChange} />
-                        {profilePic ? <Image src={URL.createObjectURL(profilePic)} alt="profilePic" className={styles.register__profilePic} width={50} height={50}/> : null}
-                        {registerFormik.errors.profilePic ? <div className={styles.register__error}>{registerFormik.errors.profilePic}</div> : null}
-                    </div>
 
+
+
+                <div className={styles.register__form__group}>
+                    <label htmlFor="avatar">Profile Picture</label>
+                    <input type="file" id="avatar" name="avatar" onChange={handleAvatarChange} />
+                    {avatar && <Image src={URL.createObjectURL(avatar)} alt="Profile Preview"  height={50} width={50} />}
+                    {registerFormik.errors.avatar && <div className={styles.register__error}>{registerFormik.errors.avatar}</div>}
                 </div>
 
                 <button type="submit" className={styles.register__btn}>Register</button>

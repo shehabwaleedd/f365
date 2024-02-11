@@ -7,19 +7,21 @@ import axios from 'axios';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import styles from "./page.module.scss"
+import { handleLoginSuccess } from '@/context/useUser';
 
 
 
 const Page = () => {
     const [errorFromDataBase, setErrorFromDataBase] = useState('')
     const [isLoading, setIsLoading] = useState(false);
+
     const router = useRouter();
     let validationSchema = yup.object({
         email: yup.string().email().required(),
-        password: yup.string().matches(/^(?=.*[A-Za-z])[A-Za-z\d]{6,}$/, 'at least 6 charchter and start with upperCase').required(),
+        password: yup.string().required(),
 
     })
-    const baseUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : 'https://api.example.com'
+    const baseUrl = "https://events-nsih.onrender.com";
 
 
 
@@ -32,9 +34,12 @@ const Page = () => {
         onSubmit: async (values) => {
             setIsLoading(true);
             try {
-                const response = await axios.post(`${baseUrl}/auth/login`, values);
-                localStorage.setItem('token', response.data.token);
-                router.push('/'); // Navigate to the home page
+                const response = await axios.post(`${baseUrl}/user/login`, values);
+                const { data: userData, token } = response.data; // Adjusting based on provided structure
+                // Pass both token and user data to handleLoginSuccess
+                // Ensure handleLoginSuccess is expecting userData as the second argument
+                handleLoginSuccess(token, userData); 
+                router.push('/account');
             } catch (err) {
                 setErrorFromDataBase(err.response?.data.message || 'An error occurred');
             } finally {
@@ -51,6 +56,8 @@ const Page = () => {
                     type="email"
                     name="email"
                     placeholder="Email"
+                    autoComplete='email'
+                    required
                     onChange={loginFormik.handleChange}
                     value={loginFormik.values.email}
                     className={styles.input}
@@ -60,6 +67,8 @@ const Page = () => {
                     type="password"
                     name="password"
                     placeholder="Password"
+                    autoComplete='current-password'
+                    required
                     onChange={loginFormik.handleChange}
                     value={loginFormik.values.password}
                     className={styles.input}

@@ -54,7 +54,8 @@ const Landing = ({ windowWidth }) => {
 
     useEffect(() => {
         const appElement = document.querySelector(`.${styles.landing}`);
-    
+        const servicesElement = document.querySelector(`.${styles.what}`)
+
         if (appElement) {
             if (becomePartner || becomeMember) {
                 appElement.style.filter = 'blur(5px)';
@@ -109,20 +110,23 @@ const Landing = ({ windowWidth }) => {
                                 </p>
                             )}
                             <div className={styles.landing__left_content_bottom_right}>
-                                <Link href="" onClick={handleBecomePartner}>
-                                    <span>
-                                        Become A Partner
-                                        <FaArrowRight />
-                                    </span>
-                                </Link>
-                                <Link href="/about" className={styles.landing__left_content_bottom_right_link}>
-                                    <span>
-                                        IG
-                                    </span>
-                                </Link>
+                                <Magnetic>
+                                    <Link href="" onClick={handleBecomePartner}>
+                                        <span>
+                                            Become A Partner
+                                            <FaArrowRight />
+                                        </span>
+                                    </Link>
+                                </Magnetic>
+                                <Magnetic>
+                                    <Link href="/about" className={styles.landing__left_content_bottom_right_link}>
+                                        <span>
+                                            IG
+                                        </span>
+                                    </Link>
+                                </Magnetic>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div className={styles.landing__right}>
@@ -131,7 +135,7 @@ const Landing = ({ windowWidth }) => {
                         <h1>Unleash Your Potential</h1>
                         <h2>Empowering Women in Health, Growth, and Careers.</h2>
                         <Magnetic>
-                            <Link href="/events">
+                            <Link href="/register">
                                 <span>
                                     Become A Member
                                     <FaArrowRight />
