@@ -20,12 +20,11 @@ const Index = () => {
                     <h2>Contact Us</h2>
                     <ul>
                         <li>
-                            <a href="mailto:info@shehabwaleed.com"> hello@f356global.com
+                            <a href="mailto:hello@f365global.com"> hello@f365global.com
                             </a>
                         </li>
                         <li>
-                            <a href="tel:+201023288200"> +20 10 232 88 200
-                            </a>
+                            <a href="tel:+971508028407"> +971 50 802 8407</a>
                         </li>
                     </ul>
 
@@ -33,7 +32,7 @@ const Index = () => {
                 <div className={styles.footer__upper__right}>
                     <h2>Follow us</h2>
                     <div className={styles.footer__upper__right_container}>
-                        <div >
+                        <div>
                             <ul>
                                 <li>
                                     <a href="https://www.instagram.com/f365movement/" target='_blank' rel="noreferrer">
@@ -65,8 +64,8 @@ const Index = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link href="/community">
-                                        Community
+                                    <Link href="/services">
+                                        Services
                                     </Link>
                                 </li>
                                 <li>
@@ -87,12 +86,12 @@ const Index = () => {
                 <div className={styles.footer__footer_lower}>
                     <ul>
                         <li>
-                            <Link href="https://www.instagram.com/kronfol_leb/" target='_blank' rel="noreferrer">
+                            <Link href="/terms" rel="noreferrer">
                                 Terms
                             </Link>
                         </li>
                         <li>
-                            <Link href="https://www.instagram.com/kronfol_leb/" target='_blank' rel="noreferrer">
+                            <Link href="/privacy" rel="noreferrer">
                                 Privacy
                             </Link>
                         </li>

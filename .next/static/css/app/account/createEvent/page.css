@@ -1,0 +1,117 @@
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[11].oneOf[9].use[3]!./node_modules/next/dist/build/webpack/loaders/resolve-url-loader/index.js??ruleSet[1].rules[11].oneOf[9].use[4]!./node_modules/next/dist/compiled/sass-loader/cjs.js??ruleSet[1].rules[11].oneOf[9].use[5]!./src/app/account/createEvent/page.module.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+.page_createEvent__Kr__d {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 5vh;
+  padding: 2rem;
+}
+.page_createEvent__Kr__d h1 {
+  font-family: var(--title-font);
+  font-size: var(--bigger-font-size);
+  color: var(--title-color);
+  font-weight: 400;
+  letter-spacing: normal;
+  text-transform: capitalize;
+  font-display: swap;
+}
+@media (max-width: 777px) {
+  .page_createEvent__Kr__d h1 {
+    font-size: 4.3vh;
+  }
+}
+.page_createEvent__container__nMO1j {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.page_createEvent__container__nMO1j form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1vh;
+}
+.page_createEvent__container__nMO1j form .page_createEvent__container_content__a60LO {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+@media (max-width: 1368px) {
+  .page_createEvent__container__nMO1j form .page_createEvent__container_content__a60LO {
+    max-width: 80vw;
+  }
+}
+.page_createEvent__container__nMO1j form .page_createEvent__container_content__a60LO input {
+  width: 30%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 2rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.page_createEvent__container__nMO1j form .page_createEvent__container_content__a60LO input:hover {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--title-color);
+}
+.page_createEvent__container__nMO1j form .page_createEvent__container_content__a60LO textarea {
+  width: 100%;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  border-radius: 2rem;
+  color: var(--title-color);
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.page_createEvent__container__nMO1j form .page_createEvent__container_content__a60LO textarea:hover {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid var(--title-color);
+}
+.page_createEvent__container__nMO1j form .page_createEvent__container_content__a60LO label {
+  color: var(--title-color);
+  font-size: 1.2rem;
+}
+.page_createEvent__container__nMO1j form .page_createEvent__container_content__a60LO input[type=radio] {
+  display: none;
+}
+.page_createEvent__container__nMO1j form button {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid var(--title-color);
+  border-radius: 2rem;
+  font-size: 1.3rem;
+  background-color: var(--accent-color);
+  color: var(--title-color);
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.page_createEvent__container__nMO1j form button:hover {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: var(--title-color);
+  color: var(--container-color);
+}
+
+.page_createEvent__ontainer_content_radios__OqZNx {
+  display: flex;
+  width: 100%;
+  gap: 0.5vw;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+}
+.page_createEvent__ontainer_content_radios__OqZNx label {
+  cursor: pointer;
+}

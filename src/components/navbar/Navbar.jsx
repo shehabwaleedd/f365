@@ -1,17 +1,16 @@
 'use client'
 
 import React, { useState, useCallback, useEffect } from 'react'
-import Head from 'next/head'
 import { motion, useAnimation, AnimatePresence } from 'framer-motion';
 import Nav from './nav/index';
 import { FiMenu } from "react-icons/fi";
 import styles from './style.module.scss'
 import Link from 'next/link'
-import dynamic from 'next/dynamic';
 import getChars from '@/animation/animatedHeaders/getChars';
 import Calendly from './calendly/Calendly';
 import { useUser } from "@/context/useUser"
 import { useRouter } from "next/navigation"
+import Magnetic from '@/utils/common/Magnetic';
 import { logout, useLogout } from '@/context/auth';
 
 const Navbar = () => {
@@ -96,18 +95,25 @@ const Navbar = () => {
                                 </li>
                             </ul>
                         ) : (
-                            <ul>
-                                <li>
-                                    <Link href="/account">
-                                        Account
+                            <div className={styles.navbar__links_user}>
+                                <ul>
+                                    <li>
+                                        <Link href="/account">
+                                            Account
+                                        </Link>
+                                    </li>
+                                    <button onClick={handleLogout}>
+                                        <span>
+                                            Logout
+                                        </span>
+                                    </button>
+                                </ul>
+                                <Magnetic>
+                                    <Link href="/account/createEvent" className={styles.navbar__links_user_btn}>
+                                        Create Event
                                     </Link>
-                                </li>
-                                <button onClick={handleLogout}>
-                                    <span>
-                                        Logout
-                                    </span>
-                                </button>
-                            </ul>
+                                </Magnetic>
+                            </div>
                         )}
                     </div>
                 </div>

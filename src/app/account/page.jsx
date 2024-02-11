@@ -16,6 +16,7 @@ const Account = () => {
     const [changePasswordOpen, setChangePasswordOpen] = useState(false);
     const [userEventsOpen, setUserEventsOpen] = useState(false);
     const router = useRouter()
+    const token = localStorage.getItem('token');
 
     const handleLogout = () => {
         logout();
@@ -41,7 +42,24 @@ const Account = () => {
     }
 
 
+    const handleAvatarChange = async (event) => {
+        const file = event.target.files[0];
+        const formData = new FormData();
+        formData.append('avatar', file);
 
+        try {
+            const response = await axios.post('https://events-nsih.onrender.com/user', formData, {
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                    token
+                }
+            });
+            console.log(response.data);
+        }
+        catch (err) {
+            console.error(err);
+        }
+    };
 
     if (loading) return <div className={styles.please}>Loading...</div>;
     if (error) return <div >Error: {error.message}</div>;
@@ -64,11 +82,11 @@ const Account = () => {
                         <div className={styles.account_lower_left_upper_top}>
                             <Image src={user.data.avatar ? user.data.avatar.url : '/user.png'} alt="user" width={300} height={300} quality={100} />
                         </div>
-                        <button>
-                            <span>
-                                change profile picture
-                            </span>
-                        </button>
+
+                        <div className={styles.account_lower_left_upper_middle}>
+                            <input type="file" id="avatar" name="avatar" accept="image/*" onChange={handleAvatarChange} />
+                            <label htmlFor="avatar">Change Avatar</label>
+                        </div>
                         <div className={styles.account_lower_left_upper_bottom}>
                             <h2>{user.data.name}</h2>
                         </div>
@@ -81,22 +99,15 @@ const Account = () => {
                         </ul>
                     </div>
                 </div>
+
                 <div className={styles.account__lower_right}>
                     <AnimatePresence mode='wait'>
-                        {personalInfoOpen && (
-                            <PersonalInfo user={user} />
-                        )}
-                        {changePasswordOpen && (
-                            <ChangePassword />
-                        )}
-                        {userEventsOpen && (
-                            <div>
-                                <h2>My Events</h2>
-                                <p>My Events</p>
-                            </div>
-                        )}
+                        {personalInfoOpen && <PersonalInfo user={user} />}
+                        {changePasswordOpen && <ChangePassword />}
+                        {userEventsOpen && <div><h2>My Events</h2></div>}
                     </AnimatePresence>
                 </div>
+
             </div>
         </main>
     )

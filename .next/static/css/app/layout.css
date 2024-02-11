@@ -96,6 +96,11 @@ input:focus {
   border-color: var(--text-color);
 }
 
+label {
+  color: var(--title-color);
+  font-size: 1rem;
+}
+
 ul {
   list-style: none;
 }
@@ -672,6 +677,32 @@ img {
 .style_navbar__links__Cb3xE ul button:hover {
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   color: var(--accent-color);
+}
+.style_navbar__links_user__7CHR_ {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  padding-right: 1rem;
+}
+.style_navbar__links_user_btn__OXzer {
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  background-color: var(--accent-color);
+  padding: 0.6rem;
+  border-radius: 2rem;
+  border: 2px solid var(--title-color);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--header-color);
+}
+.style_navbar__links_user_btn__OXzer:hover {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: var(--title-color);
+  color: var(--container-color);
 }
 .style_navbar__7NMKj .style_menu__aEjKJ {
   display: flex;
